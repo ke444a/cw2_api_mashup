@@ -79,7 +79,8 @@ fetch(url)
     .then(function(data) {
       console.log(data);
 
-      slider = document.getElementsByClassName("deals-slider")[0];
+      var slider = document.getElementsByClassName("deals-slider")[0];
+      console.log(slider);
 
       for(var i = 0; i < topDealItemCount; i++){
 
@@ -100,9 +101,10 @@ fetch(url)
         append(item, title);
         append(item, price);
 
-        append(item, slider);
+      // the code below adding the game div to the list breaks the slider altogether
 
-        console.log(item);
+      // append(item, slider);
+
       }
 
 
