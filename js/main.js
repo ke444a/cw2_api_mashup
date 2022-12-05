@@ -77,21 +77,22 @@ url = "https://www.cheapshark.com/api/1.0/deals?pageSize=" + topDealItemCount;
 fetch(url)
     .then((resp) => resp.json())
     .then(function(data) {
-      console.log(data);
 
       var slider = document.getElementsByClassName("deals-slider")[0];
-      console.log(slider);
 
       for(var i = 0; i < topDealItemCount; i++){
 
         var item = createNode("div");
-        var img = createNode("image");
+        var img = createNode("img");
         var title = createNode("h5");
         var price = createNode("p");
 
         item.setAttribute('class',"deals-slider__item" );
         img.setAttribute('class', "slider__item-img");
         img.setAttribute('src', data[i].thumb);
+
+        img.style.width = "180px"
+
         title.setAttribute('class', "slider__item-title mt-3 mb-0");
         title.innerHTML = data[i].title;
         price.setAttribute('class', "slider__item-price mt-2");
@@ -102,7 +103,6 @@ fetch(url)
         append(item, price);
 
         append(slider, item);
-
       }
 
 
@@ -121,12 +121,3 @@ fetch(url)
     .catch(function(error) {
         console.log(error);
     });
-
-
-// <div class="deals-slider__item">
-//   <img class="slider__item-img" src="https://picsum.photos/180/230" alt="Game logo">
-//   <h5 class="slider__item-title mt-3 mb-0">Game title</h5>
-//   <p class="slider__item-price mt-2">£<span id="top-deals-price">25.99</span></p>
-// </div>
-
-
