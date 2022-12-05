@@ -101,9 +101,7 @@ fetch(url)
         append(item, title);
         append(item, price);
 
-      // the code below adding the game div to the list breaks the slider altogether
-
-      // append(item, slider);
+        append(slider, item);
 
       }
 
