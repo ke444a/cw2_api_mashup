@@ -1,0 +1,54 @@
+/*
+#F0EDEE
+#313638
+#2B2C28
+#131515
+#020402
+#262730
+*/
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #131515;
+    font-family: 'Overpass', sans-serif;
+    color: #F0EDEE;
+}
+
+h1, h2, h5 {
+    font-family: 'Fjalla One', sans-serif;
+}
+
+header {
+    height: 15vh;
+    background: #fff;
+}
+
+.introduction {
+    height: 80vh;
+    width: 100%;
+}
+
+.introduction__content-text {
+    max-width: 50%;
+}
+
+.carousel {
+    max-width: 75%;
+}
+
+.carousel-item {
+    height: 450px;
+}
+
+.carousel-caption__title {
+    background-color: rgba(19, 21, 21, 0.5);
+}
+
+.slick-prev, .slick-next {
+    color: inherit;
+    background-color: inherit;
+    border: none;
+    margin: 0 20px;
+}
