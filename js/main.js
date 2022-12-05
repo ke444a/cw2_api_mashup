@@ -18,8 +18,11 @@ function append(parent, el) {
   return parent.appendChild(el);
 }
 
+
 url = "https://api.rawg.io/api/games?key=0dac4fa06f3b451ea15e3e67b4b187c2";
 
+
+//how many items do you want in the carousel?
 var carouselItems = 5;
 
 fetch(url)
@@ -39,7 +42,7 @@ fetch(url)
 
       captionDiv.setAttribute('class', 'carousel-caption d-none d-md-block pb-0');
       caption.setAttribute('class', 'carousel-caption__title mb-0 py-2');
-      caption.innerHTML = "NOW AVAILABLE"
+      caption.innerHTML = data.results[0].name;
 
       append(captionDiv, caption);
       append(item, img);
@@ -62,7 +65,7 @@ fetch(url)
 
         captionDiv.setAttribute('class', 'carousel-caption d-none d-md-block pb-0');
         caption.setAttribute('class', 'carousel-caption__title mb-0 py-2');
-        caption.innerHTML = "NOW AVAILABLE"
+        caption.innerHTML = data.results[i].name;
 
         append(captionDiv, caption);
         append(item, img);
