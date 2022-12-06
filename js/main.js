@@ -12,7 +12,7 @@ function append(parent, el) {
 //how many items do you want in the carousel?
 var carouselItems = 5;
 
-url = "https://api.rawg.io/api/games?key=0dac4fa06f3b451ea15e3e67b4b187c2&page_size=" + carouselItems;
+var url = "https://api.rawg.io/api/games?key=0dac4fa06f3b451ea15e3e67b4b187c2&page_size=" + carouselItems;
 
 fetch(url)
     .then((resp) => resp.json())
@@ -121,3 +121,95 @@ fetch(url)
     .catch(function(error) {
         console.log(error);
     });
+
+
+
+//fetch NEW RELEASES
+
+var newReleaseItemRows = 2;
+
+var cutOffDates = "2022-01-01,2022-12-31";
+
+var newReleaseCount = 4*newReleaseItemRows;
+
+var url = "https://api.rawg.io/api/games?key=0dac4fa06f3b451ea15e3e67b4b187c2&dates="+cutOffDates+"&page_size="+newReleaseCount;
+
+var priceParagraphsToAdd = [];
+var titlesOfPricesToAdd = [];
+
+fetch(url)
+    .then((resp) => resp.json())
+    .then(function(data) {
+            // <div class="container">
+            //     <h2 class="mb-3">NEW RELEASES</h2>
+            //     <div class="row">
+            //       <div class="col-3">
+            //         <img class="w-100" src="https://picsum.photos/200/150" alt="">
+            //         <p class="text-end fw-bold mt-2">£ <span id="new-realses-price">14.99</span></p>
+            //       </div>
+                  
+            //     </div>
+            // </div>
+
+
+            var newReleases = document.getElementById("new-releases");
+
+            var container = createNode("div");
+            container.setAttribute("class", "container");
+            append(newReleases, container);
+
+            var header = createNode("h2");
+            header.setAttribute("class", "mb-3");
+            header.innerHTML = "NEW RELEASES";
+            append(container, header);
+
+            var rows = createNode("div");
+            rows.setAttribute("class", "row");
+            append(container, rows);
+
+            for(var i = 0; i < newReleaseCount; i++){
+
+              var div = createNode("div");
+              div.setAttribute("class", "col-3");
+              append(rows, div);
+
+              var img = createNode("img");
+              img.setAttribute("class", "w-100");
+              img.setAttribute("src", data.results[i].background_image);
+              append(div, img);
+              
+              
+              
+              var price = createNode("p");
+              price.setAttribute("class", "text-end fw-bold mt-2");
+              priceParagraphsToAdd.push(price);
+              titlesOfPricesToAdd.push(data.results[i].name);
+              append(div, price);
+
+
+            }
+            
+            
+    })
+    .catch(function(error) {
+        console.log(error);
+    });
+
+// function updateNewReleasePrices(){
+//   setTimeout(function() {
+//     console.log(titlesOfPricesToAdd);
+//     if (priceParagraphsToAdd.length == 8 && titlesOfPricesToAdd.length == 8){
+//       for (var i = 0; i < priceParagraphsToAdd.length; i++){
+//         var dealUrl = "https://www.cheapshark.com/api/1.0/deals?title="+titlesOfPricesToAdd[i]+"&exact=0&sortBy=savings";
+//         fetch(dealUrl, {mode: 'no-cors'}).then((resp) => resp.json()).then(function(dealData){
+//           //if (dealData.length == 0){return}
+//           console.log(dealData);
+//           priceParagraphsToAdd[i].innerHTML = "£ <span id=\"new-realses-price\">"+dealData[0].salePrice+"</span>"});
+//       } 
+//       return  
+//     }
+//     updateNewReleasePrices();
+//   }, 500);
+// }
+
+// updateNewReleasePrices();
