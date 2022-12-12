@@ -134,9 +134,6 @@ var newReleaseCount = 4*newReleaseItemRows;
 
 var url = "https://api.rawg.io/api/games?key=0dac4fa06f3b451ea15e3e67b4b187c2&dates="+cutOffDates+"&page_size="+newReleaseCount;
 
-var priceParagraphsToAdd = [];
-var titlesOfPricesToAdd = [];
-
 fetch(url)
     .then((resp) => resp.json())
     .then(function(data) {
@@ -182,11 +179,9 @@ fetch(url)
               
               var price = createNode("p");
               price.setAttribute("class", "text-end fw-bold mt-2");
-              priceParagraphsToAdd.push(price);
-              titlesOfPricesToAdd.push(data.results[i].name);
               append(div, price);
 
-
+              updateNewReleasePrices(price, data.results[i].name)
             }
             
             
@@ -195,21 +190,15 @@ fetch(url)
         console.log(error);
     });
 
-// function updateNewReleasePrices(){
-//   setTimeout(function() {
-//     console.log(titlesOfPricesToAdd);
-//     if (priceParagraphsToAdd.length == 8 && titlesOfPricesToAdd.length == 8){
-//       for (var i = 0; i < priceParagraphsToAdd.length; i++){
-//         var dealUrl = "https://www.cheapshark.com/api/1.0/deals?title="+titlesOfPricesToAdd[i]+"&exact=0&sortBy=savings";
-//         fetch(dealUrl, {mode: 'no-cors'}).then((resp) => resp.json()).then(function(dealData){
-//           //if (dealData.length == 0){return}
-//           console.log(dealData);
-//           priceParagraphsToAdd[i].innerHTML = "£ <span id=\"new-realses-price\">"+dealData[0].salePrice+"</span>"});
-//       } 
-//       return  
-//     }
-//     updateNewReleasePrices();
-//   }, 500);
-// }
+function updateNewReleasePrices(element, itemName){
 
-// updateNewReleasePrices();
+console.log(element);
+
+  var url = "https://www.cheapshark.com/api/1.0/deals?title="+itemName+"&sortBy=savings";
+  fetch(url)
+    .then((resp) => resp.json())
+    .then(function(data) {
+    console.log(data);
+    element.innerHTML = "£ <span id=\"new-realses-price\">"+data[0].salePrice+"</span>"});
+
+} 
