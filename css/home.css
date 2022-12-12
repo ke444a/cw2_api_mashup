@@ -198,3 +198,14 @@ footer
     height: 100px;
     width: 200px;
   }
+
+  .bgimg {
+    background-image: url("../img/GameBackGroundSpreadGradient.png");
+
+  }
+
+  .bgimgLower {
+    background-image: url("../img/GameBackGroundSpreadGradient.png");
+    background-position: bottom;
+    
+  }
