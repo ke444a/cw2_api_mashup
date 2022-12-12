@@ -1,9 +1,10 @@
-.hidden {
-    display: none;
+.tab-content {
+    display:none;
 }
 
-.visually-hidden {
-    opacity: 0;
+.tab-link, .tab-link:hover {
+    color: inherit;
+    cursor: pointer;
 }
 
 .card {
@@ -53,12 +54,4 @@
 .card-title:hover{
     color: inherit;
     text-decoration: underline;
-}
-
-.tab-content {
-    display:none;
-}
-
-.tab-link, .tab-link:hover {
-    color: inherit;
 }
