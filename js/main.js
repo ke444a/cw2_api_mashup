@@ -128,26 +128,15 @@ fetch(url)
 
 var newReleaseItemRows = 2;
 
-var cutOffDates = "2022-01-01,2022-12-31";
-
 var newReleaseCount = 4*newReleaseItemRows;
 
-var url = "https://api.rawg.io/api/games?key=0dac4fa06f3b451ea15e3e67b4b187c2&dates="+cutOffDates+"&page_size="+newReleaseCount;
-
+var url = "https://api.codetabs.com/v1/proxy/?quest=https://store.steampowered.com/api/featuredcategories/?cc=EE&amp;l=english&v=1&trailer=1%20HTTP/1.1";
+  
 fetch(url)
     .then((resp) => resp.json())
     .then(function(data) {
-            // <div class="container">
-            //     <h2 class="mb-3">NEW RELEASES</h2>
-            //     <div class="row">
-            //       <div class="col-3">
-            //         <img class="w-100" src="https://picsum.photos/200/150" alt="">
-            //         <p class="text-end fw-bold mt-2">£ <span id="new-realses-price">14.99</span></p>
-            //       </div>
-                  
-            //     </div>
-            // </div>
 
+            console.log(data);
 
             var newReleases = document.getElementById("new-releases");
 
@@ -172,7 +161,7 @@ fetch(url)
 
               var img = createNode("img");
               img.setAttribute("class", "w-100");
-              img.setAttribute("src", data.results[i].background_image);
+              img.setAttribute("src", data.new_releases.items[i].large_capsule_image);
               append(div, img);
               
               
@@ -181,7 +170,14 @@ fetch(url)
               price.setAttribute("class", "text-end fw-bold mt-2");
               append(div, price);
 
-              updateNewReleasePrices(price, data.results[i].name)
+              if (data.new_releases.items[i].final_price == 0){
+                price.innerHTML = "FREE!"
+                continue;
+              }
+
+              price.innerHTML = "£ <span id=\"new-realses-price\">"+data.new_releases.items[i].final_price/100+"</span>";
+
+              updateNewReleasePrices(price, data.new_releases.items[i].id)
             }
             
             
@@ -190,15 +186,17 @@ fetch(url)
         console.log(error);
     });
 
-function updateNewReleasePrices(element, itemName){
+function updateNewReleasePrices(element, id){
 
-console.log(element);
-
-  var url = "https://www.cheapshark.com/api/1.0/deals?title="+itemName+"&sortBy=savings";
+  var url = "https://www.cheapshark.com/api/1.0/games?steamAppID="+id;
   fetch(url)
+
     .then((resp) => resp.json())
     .then(function(data) {
     console.log(data);
-    element.innerHTML = "£ <span id=\"new-realses-price\">"+data[0].salePrice+"</span>"});
+    element.innerHTML = "£ <span id=\"new-realses-price\">"+data[0].cheapest+"</span>"})
+    .catch(function(error){
+      return;
+    });
 
-} 
+}
