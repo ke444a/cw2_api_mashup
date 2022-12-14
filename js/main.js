@@ -12,11 +12,12 @@ function append(parent, el) {
 //how many items do you want in the carousel?
 var carouselItems = 5;
 
-var url = "https://api.rawg.io/api/games?key=0dac4fa06f3b451ea15e3e67b4b187c2&page_size=" + carouselItems;
+var url = "https://api.codetabs.com/v1/proxy/?quest=https://store.steampowered.com/api/featuredcategories/?cc=EE&amp;l=english&v=1&trailer=1%20HTTP/1.1";
 
 fetch(url)
     .then((resp) => resp.json())
     .then(function(data) {
+      console.log(data);
       var carousel = document.getElementsByClassName("carousel-inner")[0];
       
       var item = createNode("div");
@@ -27,11 +28,13 @@ fetch(url)
       item.setAttribute('class','carousel-item active');
 
       img.setAttribute('class', 'd-block w-100 h-100');
-      img.setAttribute('src', data.results[0].background_image)
+      img.setAttribute('src', data.specials.items[0].large_capsule_image);
+
+      data.new_releases.items[i];
 
       captionDiv.setAttribute('class', 'carousel-caption d-none d-md-block pb-0');
       caption.setAttribute('class', 'carousel-caption__title mb-0 py-2');
-      caption.innerHTML = data.results[0].name;
+      caption.innerHTML = data.specials.items[0].name;
 
       append(captionDiv, caption);
       append(item, img);
@@ -50,11 +53,11 @@ fetch(url)
         item.setAttribute('class','carousel-item');
 
         img.setAttribute('class', 'd-block w-100 h-100');
-        img.setAttribute('src', data.results[i].background_image)
+        img.setAttribute('src', data.specials.items[i].large_capsule_image)
 
         captionDiv.setAttribute('class', 'carousel-caption d-none d-md-block pb-0');
         caption.setAttribute('class', 'carousel-caption__title mb-0 py-2');
-        caption.innerHTML = data.results[i].name;
+        caption.innerHTML = data.specials.items[i].name;
 
         append(captionDiv, caption);
         append(item, img);
@@ -136,8 +139,6 @@ fetch(url)
     .then((resp) => resp.json())
     .then(function(data) {
 
-            console.log(data);
-
             var newReleases = document.getElementById("new-releases");
 
             var container = createNode("div");
@@ -183,7 +184,7 @@ fetch(url)
             
     })
     .catch(function(error) {
-        console.log(error);
+        //console.log(error);
     });
 
 function updateNewReleasePrices(element, id){
@@ -193,8 +194,7 @@ function updateNewReleasePrices(element, id){
 
     .then((resp) => resp.json())
     .then(function(data) {
-    console.log(data);
-    element.innerHTML = "£ <span id=\"new-realses-price\">"+data[0].cheapest+"</span>"})
+    element.innerHTML = "<a href="+  +">£ <span id=\"new-realses-price\">"+data[0].cheapest+"</span></a>"})
     .catch(function(error){
       return;
     });
