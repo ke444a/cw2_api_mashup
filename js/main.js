@@ -33,7 +33,7 @@ fetch(url)
 
       captionDiv.setAttribute('class', 'carousel-caption d-none d-md-block pb-0');
       caption.setAttribute('class', 'carousel-caption__title mb-0 py-2');
-      caption.innerHTML = "<a href=descriptionPage/?id=" + data.specials.items[0].id + ">" + data.specials.items[0].name + "</a>";
+      caption.innerHTML = "<a href=descriptionPage.html?id=" + data.specials.items[0].id + ">" + data.specials.items[0].name + "</a>";
 
       append(captionDiv, caption);
       append(item, img);
@@ -56,7 +56,7 @@ fetch(url)
 
         captionDiv.setAttribute('class', 'carousel-caption d-none d-md-block pb-0');
         caption.setAttribute('class', 'carousel-caption__title mb-0 py-2');
-        caption.innerHTML = "<a href=descriptionPage/?id=" + data.specials.items[i].id + ">" + data.specials.items[i].name + "</a>";
+        caption.innerHTML = "<a href=descriptionPage.html?id=" + data.specials.items[i].id + ">" + data.specials.items[i].name + "</a>";
 
         append(captionDiv, caption);
         append(item, img);
@@ -96,7 +96,7 @@ fetch(url)
         img.style.width = "180px"
 
         title.setAttribute('class', "slider__item-title mt-3 mb-0");
-        title.innerHTML = "<a href=descriptionPage/?gameID=" + data[i].gameID + ">" + data[i].title+ "</a>";
+        title.innerHTML = "<a href=descriptionPage.html?gameID=" + data[i].gameID + ">" + data[i].title+ "</a>";
         price.setAttribute('class', "slider__item-price mt-2");
         price.innerHTML = "£<span id=\"top-deals-price\">" + data[i].salePrice + "</span>";
 
@@ -175,7 +175,7 @@ fetch(url)
                 continue;
               }
 
-              price.innerHTML = "<a href='descriptionPage/?id="+ data.new_releases.items[i].id +"'>£ <span id=\"new-realses-price\">"+String(data.new_releases.items[i].final_price/100)+"</span>";
+              price.innerHTML = "<a href='descriptionPage.html?id="+ data.new_releases.items[i].id +"'>£ <span id=\"new-realses-price\">"+String(data.new_releases.items[i].final_price/100)+"</span>";
 
               updateNewReleasePrices(price, data.new_releases.items[i].id)
             }
@@ -196,7 +196,7 @@ function updateNewReleasePrices(element, id){
 
       if(data.length == 0){return;}
 
-      element.innerHTML = "<a href='descriptionPage/?id="+ id +"'>£ <span id=\"new-realses-price\">"+data[0].cheapest+"</span></a>"})
+      element.innerHTML = "<a href='descriptionPage.html?id="+ id +"'>£ <span id=\"new-realses-price\">"+data[0].cheapest+"</span></a>"})
       .catch(function(error){
       //console.log(error);
       return;
