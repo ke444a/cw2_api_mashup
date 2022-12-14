@@ -26,8 +26,6 @@ function callFetch() {
         .then((resp) => resp.json())
         .then(function(response) {
 
-            console.log(eval("response['" + String(id) + "'];"));
-
             let data = eval("response['" + String(id) + "'];").data;
 
             document.getElementById("description").innerHTML = data.detailed_description;
@@ -66,6 +64,7 @@ function callFetch() {
               append(carousel, item)
             }
 
+            document.getElementById("reviews").innerHTML = "<a href='" + data.metacritic.url + "'><h2>Metacritic Score: " + data.metacritic.score;
 
         })
         .catch(function(error) {
