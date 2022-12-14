@@ -10,44 +10,87 @@ window.addEventListener('DOMContentLoaded', (event) => {
     return parent.appendChild(el);
   }
 
-let url = "https://api.rawg.io/api/games?key=0dac4fa06f3b451ea15e3e67b4b187c2&page_size=5&search=elden%20ring&language=eng";
+
+
+let id = window.location.href.split('?')[1].split('=')[1];
 const container = document.getElementById('main');
 const title = document.getElementById('title');
 const screenshots = document.getElementById('carousel-inner');
 const reviews = document.getElementById('reviews');
 
+let url = "https://api.codetabs.com/v1/proxy/?quest=https://store.steampowered.com/api/appdetails?appids="+id;
+console.log(url);
+
 function callFetch() {
     fetch(url)
         .then((resp) => resp.json())
-        .then(function(data) {
+        .then(function(response) {
+
+            let data = eval("response['" + String(id) + "'];").data;
+
+            document.getElementById("description").innerHTML = data.detailed_description;
         
-            let game = data.results;
-            title.innerHTML = game[0].name;
+            title.innerHTML = data.name;
 
-            let inner = createNode('div');
-            inner.setAttribute('class', 'carousel-inner');
-            let item1 = document.getElementById('item1');
-            item1.setAttribute('src', 'https://sportshub.cbsistatic.com/i/2022/04/07/4e7e79bc-b941-4e56-bfad-2c547d36b6ca/elden-ring-malenia.png');
-            game[0].short_screenshots.forEach(screenshot => {
-                let item = createNode('div');
-                item.setAttribute('class', 'carousel-item');
-                let img = createNode('img');
-                img.setAttribute('class', 'd-block w-100 h-100');
-                img.setAttribute('src', screenshot.image);
-                append(screenshots, item);
-                append(item, img);
-            })
+            document.getElementById('requirements').innerHTML = data.pc_requirements.recommended;
 
-            game[0].ratings.forEach(rating => {
-                let rate = createNode('div');
-                let text = createNode('p');
-                text.innerHTML = rating.percent + "% - \"" + rating.title + "\"";
-                append(rate, text);
-                append(reviews, rate);
-            })
+
+            let screenshots = data.screenshots;
+
+            var carousel = document.getElementById("carousel-inner");
+      
+            var item = createNode("div");
+            var img = createNode("img");
+
+            item.setAttribute('class','carousel-item active');
+
+            img.setAttribute('class', 'd-block w-100 h-100');
+            img.setAttribute('src', screenshots[0].path_full);
+
+            append(item, img);
+            append(carousel, item)
+
+            for(var i = 1; i < screenshots.length; i++){
+
+              let item = createNode("div");
+              let img = createNode("img");
+
+              item.setAttribute('class','carousel-item');
+
+              img.setAttribute('class', 'd-block w-100 h-100');
+              img.setAttribute('src', screenshots[i].path_full)
+
+              append(item, img);
+              append(carousel, item)
+            }
+
+            if (data.metacritic != undefined){
+              document.getElementById("reviews").innerHTML = "<a href='" + data.metacritic.url + "'><h2>Metacritic Score: " + data.metacritic.score + "</h2></a>";
+            }else{
+              document.getElementById("reviews").innerHTML = "<h2>Metacritic Score: unrated</h2>";
+            }
+
+            if (data.content_descriptors.notes != null){
+              document.getElementById("notes").innerHTML = "please note: " + data.content_descriptors.notes;
+            }
+
+            let cheapestPriceDiv = document.getElementById("cheapestPriceDiv");
+
+            let url = "https://www.cheapshark.com/api/1.0/deals?steamAppID=" + id;
+
+            
+
+            fetch(url)
+              .then((resp) => resp.json())
+              .then(function(dealData) {
+                cheapestPriceDiv.innerHTML = "<a href='https://www.cheapshark.com/redirect?dealID=" + dealData[0].dealID + "'>$" + dealData[0].salePrice + "</a>";
+              })
+              .catch(function(error) {
+              console.log(error);
+              });
+
         })
         .catch(function(error) {
         console.log(error);
         });
 }
-
