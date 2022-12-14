@@ -10,13 +10,23 @@ window.addEventListener('DOMContentLoaded', (event) => {
     return parent.appendChild(el);
   }
 
-let url = "https://api.rawg.io/api/games?key=0dac4fa06f3b451ea15e3e67b4b187c2&page_size=5&search=elden%20ring&language=eng";
+
+
+let id = window.location.href.split('?')[1];
 const container = document.getElementById('main');
 const title = document.getElementById('title');
 const screenshots = document.getElementById('carousel-inner');
 const reviews = document.getElementById('reviews');
 
 function callFetch() {
+
+    if(id[0] === "id"){
+      steamIdFetch(id[1]);
+    }
+    else{
+      cheapsharkIDFetch(id[1]);
+    }
+
     fetch(url)
         .then((resp) => resp.json())
         .then(function(data) {
@@ -51,3 +61,30 @@ function callFetch() {
         });
 }
 
+function steamIdFetch(id){
+
+  let url = "https://store.steampowered.com/api/appdetails?appids="+id;
+
+  fetch(url)
+        .then((resp) => resp.json())
+        .then(function(data) {
+          console.log(data);
+        })
+        .catch(function(error) {
+        console.log(error);
+        });
+}
+
+function cheapsharkIDFetch(id){
+
+  let url = 
+
+  fetch(url)
+  .then((resp) => resp.json())
+  .then(function(data) {
+    console.log(data);
+  })
+  .catch(function(error) {
+  console.log(error);
+  });
+}

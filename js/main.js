@@ -72,9 +72,9 @@ fetch(url)
 //fetch TOP DEALS
 
 //how many items?
-var topDealItemCount = 20;
+var topDealItemCount = 50;
 
-url = "https://www.cheapshark.com/api/1.0/deals?pageSize=" + topDealItemCount;
+url = "https://www.cheapshark.com/api/1.0/deals?steamworks=1&pageSize=" + topDealItemCount;
 
 fetch(url)
     .then((resp) => resp.json())
@@ -83,6 +83,10 @@ fetch(url)
       var slider = document.getElementsByClassName("deals-slider")[0];
 
       for(var i = 0; i < topDealItemCount; i++){
+
+        if(data[i].steamAppID == null){
+          continue;
+        }
 
         var item = createNode("div");
         var img = createNode("img");
@@ -93,10 +97,11 @@ fetch(url)
         img.setAttribute('class', "slider__item-img");
         img.setAttribute('src', data[i].thumb);
 
-        img.style.width = "180px"
+        img.style.width = "240px"
+        img.style.height = "90px"
 
         title.setAttribute('class', "slider__item-title mt-3 mb-0");
-        title.innerHTML = "<a href=descriptionPage.html?gameID=" + data[i].gameID + ">" + data[i].title+ "</a>";
+        title.innerHTML = "<a href=descriptionPage.html?id=" + data[i].steamAppID + ">" + data[i].title+ "</a>";
         price.setAttribute('class', "slider__item-price mt-2");
         price.innerHTML = "£<span id=\"top-deals-price\">" + data[i].salePrice + "</span>";
 
@@ -110,8 +115,8 @@ fetch(url)
 
       $(function() {
         $('.deals-slider').slick({
-          slidesToShow: 5,
-          slidesToScroll: 5,
+          slidesToShow: 3,
+          slidesToScroll: 3,
           autoplay: true,
           autoplaySpeed: 4000,
           speed: 1000,
