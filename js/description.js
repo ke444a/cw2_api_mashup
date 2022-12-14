@@ -64,7 +64,30 @@ function callFetch() {
               append(carousel, item)
             }
 
-            document.getElementById("reviews").innerHTML = "<a href='" + data.metacritic.url + "'><h2>Metacritic Score: " + data.metacritic.score;
+            if (data.metacritic != undefined){
+              document.getElementById("reviews").innerHTML = "<a href='" + data.metacritic.url + "'><h2>Metacritic Score: " + data.metacritic.score + "</h2></a>";
+            }else{
+              document.getElementById("reviews").innerHTML = "<h2>Metacritic Score: unrated</h2>";
+            }
+
+            if (data.content_descriptors.notes != null){
+              document.getElementById("notes").innerHTML = "please note: " + data.content_descriptors.notes;
+            }
+
+            let cheapestPriceDiv = document.getElementById("cheapestPriceDiv");
+
+            let url = "https://www.cheapshark.com/api/1.0/deals?steamAppID=" + id;
+
+            
+
+            fetch(url)
+              .then((resp) => resp.json())
+              .then(function(dealData) {
+                cheapestPriceDiv.innerHTML = "<a href='https://www.cheapshark.com/redirect?dealID=" + dealData[0].dealID + "'>$" + dealData[0].salePrice + "</a>";
+              })
+              .catch(function(error) {
+              console.log(error);
+              });
 
         })
         .catch(function(error) {
