@@ -96,7 +96,7 @@ fetch(url)
         img.style.width = "180px"
 
         title.setAttribute('class', "slider__item-title mt-3 mb-0");
-        title.innerHTML = data[i].title;
+        title.innerHTML = "<a href=descriptionPage/?gameID=" + data[i].gameID + ">" + data[i].title+ "</a>";
         price.setAttribute('class', "slider__item-price mt-2");
         price.innerHTML = "£<span id=\"top-deals-price\">" + data[i].salePrice + "</span>";
 
