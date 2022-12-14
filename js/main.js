@@ -34,7 +34,7 @@ fetch(url)
 
       captionDiv.setAttribute('class', 'carousel-caption d-none d-md-block pb-0');
       caption.setAttribute('class', 'carousel-caption__title mb-0 py-2');
-      caption.innerHTML = data.specials.items[0].name;
+      caption.innerHTML = "<a href=descriptionPage/?id=" + data.specials.items[0].id + ">" + data.specials.items[0].name + "</a>";
 
       append(captionDiv, caption);
       append(item, img);
@@ -57,7 +57,7 @@ fetch(url)
 
         captionDiv.setAttribute('class', 'carousel-caption d-none d-md-block pb-0');
         caption.setAttribute('class', 'carousel-caption__title mb-0 py-2');
-        caption.innerHTML = data.specials.items[i].name;
+        caption.innerHTML = "<a href=descriptionPage/?id=" + data.specials.items[i].id + ">" + data.specials.items[i].name + "</a>";
 
         append(captionDiv, caption);
         append(item, img);
@@ -178,7 +178,7 @@ fetch(url)
 
               console.log(data.new_releases.items[i]);
 
-              price.innerHTML = "<a href='singlePage?id="+ data.new_releases.items[i].id +"'>£ <span id=\"new-realses-price\">"+String(data.new_releases.items[i].final_price/100)+"</span>";
+              price.innerHTML = "<a href='descriptionPage/?id="+ data.new_releases.items[i].id +"'>£ <span id=\"new-realses-price\">"+String(data.new_releases.items[i].final_price/100)+"</span>";
 
               updateNewReleasePrices(price, data.new_releases.items[i].id)
             }
@@ -199,7 +199,7 @@ function updateNewReleasePrices(element, id){
 
       if(data.length == 0){return;}
 
-      element.innerHTML = "<a href='singlePage?id="+ id +"'>£ <span id=\"new-realses-price\">"+data[0].cheapest+"</span></a>"})
+      element.innerHTML = "<a href='descriptionPage/?id="+ id +"'>£ <span id=\"new-realses-price\">"+data[0].cheapest+"</span></a>"})
       .catch(function(error){
       console.log(error);
       return;
