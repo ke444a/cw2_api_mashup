@@ -38,7 +38,13 @@ function callFetch() {
                 append(item, img);
             })
 
-            
+            game[0].ratings.forEach(rating => {
+                let rate = createNode('div');
+                let text = createNode('p');
+                text.innerHTML = rating.percent + "% - \"" + rating.title + "\"";
+                append(rate, text);
+                append(reviews, rate);
+            })
         })
         .catch(function(error) {
         console.log(error);
