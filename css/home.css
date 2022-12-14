@@ -6,6 +6,8 @@
 #020402
 #262730
 */
+
+/* Main components */
 html {
     scroll-behavior: smooth;
 }
@@ -22,18 +24,23 @@ h1, h2, h5 {
 
 header {
     height: 15vh;
-    background: #fff;
 }
 
+/* Introduction */
 .introduction {
     height: 80vh;
     width: 100%;
+}
+
+.introduction__img {
+    max-width: 70%;
 }
 
 .introduction__content-text {
     max-width: 50%;
 }
 
+/* Bootstrap carousel */
 .carousel {
     max-width: 75%;
 }
@@ -46,9 +53,173 @@ header {
     background-color: rgba(19, 21, 21, 0.5);
 }
 
+/* Slick carousel */
+
 .slick-prev, .slick-next {
     color: inherit;
     background-color: inherit;
     border: none;
     margin: 0 20px;
+}
+
+/* Nav */
+
+nav
+{
+    font-family: 'Fjalla One', sans-serif;
+}
+
+#navBarLogoBig
+{
+    height: 90px;
+    width: 200px;
+}
+
+#navBarLogoMid
+{
+    height: 90px;
+    width: 200px;
+}
+
+#navBarLogoSmall
+{
+    height: 90px;
+    width: 200px;
+}
+
+.dropdown-divider
+{
+    background-color:orange
+}
+
+.nav-link:hover
+{
+    color: orange;
+}
+
+.dropdown-item:hover
+{
+    color: orange;
+    background-color: #343a40;
+}
+
+.navbar-toggler:focus
+{
+    color: orange;
+}
+
+.form-control:focus {
+    border-color: orange;
+    box-shadow: 0 0 0 0rem rgba(235, 167, 20, 0.779);
+} 
+
+.hvr-grow {
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+
+.hvr-grow:hover,
+.hvr-grow:focus,
+.hvr-grow:active {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+/* Footer */
+
+footer
+{
+    font-family: 'Fjalla One', sans-serif;
+    width: auto;
+    background-color: #131515;
+}
+
+.footerList
+{
+    list-style: none;
+}
+
+.footerLink
+{
+    text-decoration: none;
+    color: white
+}
+
+.footerLink:hover
+{
+    color: orange;
+}
+
+.footerLink:active
+{
+    color: white
+}
+
+.iconLink
+{
+    text-decoration: none;
+    color: white
+}
+
+.line
+{
+    color: orange;
+}
+
+.hvr-grow-shadow {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: box-shadow, transform;
+    transition-property: box-shadow, transform;
+}
+
+.hvr-grow-shadow:hover,
+.hvr-grow-shadow:focus,
+.hvr-grow-shadow:active {
+    box-shadow: 0 15px 15px -10px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+}
+
+#twitterLink:hover,
+#twitterLink:active,
+#twitterLink:focus {
+    color: darkturquoise;
+}
+
+#facebookLink:hover,
+#facebookLink:active,
+#facebookLink:focus {
+    color: blue;
+}
+
+#instaLink:hover,
+#instaLink:active,
+#instaLink:focus {
+    color: deeppink;
+}
+
+#twitchLink:hover,
+#twitchLink:active,
+#twitchLink:focus {
+    color: darkorchid;
+}
+
+#footerLogo {
+    height: 100px;
+    width: 200px;
+}
+
+.bgimg {
+    background-image: url("../img/GameBackGroundSpreadGradient.png");
 }
