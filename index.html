@@ -21,87 +21,85 @@
 </head>
 
 <body>
-
-  <nav class="navbar navbar-dark bg-dark navbar-expand-lg fixed-top pb-md-2 pt-1">
-    <div class="container">
-      <img class="navbar-brand d-none d-lg-block animate__animated animate__slideInDown" id="navBarLogoBig" src="img/logo(Small).png" alt="vapourLogo">
-      <img class="navbar-brand d-none d-md-block d-lg-none animate__animated animate__slideInDown" id="navBarLogoMid" src="img/logo(Phone).png" alt="vapourLogo">
-      <img class="navbar-brand d-block d-md-none animate__animated animate__slideInDown ps-4" id="navBarLogoSmall" src="img/logo(Phone).png" alt="vapourLogo">
-      <form class="container-fluid pe-lg-3 pe-md-3 d-none d-md-block col-md-7 col-lg-8">
-        <div class="input-group">
-          <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
-          <input type="text" class="form-control" id ="mainSearch" placeholder="Wot Game" aria-label="Search" aria-describedby="basic-addon1">
-          <button type="button" class="btn btn-outline-warning">Search</button>
-        </div>
-      </form>
-      <form class="container-fluid px-lg-3 d-sm-block d-md-none fixed-bottom pb-4">
-        <div class="input-group">
-          <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
-          <input type="text" class="form-control" id ="mainSearch" placeholder="Wot Game" aria-label="Search" aria-describedby="basic-addon1">
-          <button type="button" class="btn btn-warning">Search</button>
-        </div>
-      </form>
-      <button class="navbar-toggler d-none d-sm-block d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+  <header>
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg fixed-top pb-md-2 pt-1">
+      <div class="container">
+        <img class="navbar-brand d-none d-lg-block animate__animated animate__slideInDown" id="navBarLogoBig" src="img/logo(Small).png" alt="vapourLogo">
+        <img class="navbar-brand d-none d-md-block d-lg-none animate__animated animate__slideInDown" id="navBarLogoMid" src="img/logo(Phone).png" alt="vapourLogo">
+        <img class="navbar-brand d-block d-md-none animate__animated animate__slideInDown ps-4" id="navBarLogoSmall" src="img/logo(Phone).png" alt="vapourLogo">
+        <form class="container-fluid pe-lg-3 pe-md-3 d-none d-md-block col-md-7 col-lg-8">
+          <div class="input-group">
+            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+            <input type="text" class="form-control" id ="mainSearch" placeholder="Wot Game" aria-label="Search" aria-describedby="basic-addon1">
+            <button type="button" class="btn btn-outline-warning">Search</button>
+          </div>
+        </form>
+        <form class="container-fluid px-lg-3 d-sm-block d-md-none fixed-bottom pb-4">
+          <div class="input-group">
+            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+            <input type="text" class="form-control" id ="mainSearch" placeholder="Wot Game" aria-label="Search" aria-describedby="basic-addon1">
+            <button type="button" class="btn btn-warning">Search</button>
+          </div>
+        </form>
+        <button class="navbar-toggler d-none d-sm-block d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <button class="navbar-toggler d-block d-sm-none mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
       </button>
-      <button class="navbar-toggler d-block d-sm-none mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-      <div class="collapse navbar-collapse px-lg-2" id="navbarSupportedContent">
-        <ul class="navbar-nav mb-lg-0 ">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link hvr-grow" href="#">Browse</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle hvr-grow" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Console
-            </a>
-            <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a class="dropdown-item" href="#">PC</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Xbox</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Playstation</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Nintendo</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">VR</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle hvr-grow" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Genre
-            </a>
-            <ul class="dropdown-menu dropdown-menu-dark">
-              <li><a class="dropdown-item" href="#">FPS</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">RPG</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Puzzle</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Sports</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Simulation</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link hvr-grow" href="#">Help</a>
-          </li>
-        </ul>
+        <div class="collapse navbar-collapse px-lg-2" id="navbarSupportedContent">
+          <ul class="navbar-nav mb-lg-0 ">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hvr-grow" href="#">Browse</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle hvr-grow" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Console
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="#">PC</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Xbox</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Playstation</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Nintendo</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">VR</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle hvr-grow" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Genre
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="#">FPS</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">RPG</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Puzzle</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Sports</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Simulation</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hvr-grow" href="#">Help</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
     <main>
         <!-- Section for introduction info-->
-        <section class="bgimg text-center mb-2 py-4">
-            <img class="introduction__img my-5 pt-5 h-50 container-fluid d-md-block d-sm-none d-none" src="img/Game Spread.png" alt="">
-            <div class="container pt-5 mt-5">
-              <img class="introduction__img my-2 h-50 container d-md-none d-sm-block" src="img/Game Spread.png" alt="">
-            </div>
+        <section class="introduction text-center mb-5 py-4">
+            <img class="introduction__img my-2 h-50" src="img/Game Spread.png" alt="">
             <div class="container introduction__content pt-2">
                 <h1 class="introduction__content-title mb-3">Welcome to the largest digital game pricing service</h1>
                 <p class="introduction__content-text lead mx-auto">Vapour is is a price comparison website for digital
@@ -144,9 +142,27 @@
            
         </section>
 
-        <section id="category" class="mt-5">
+        <section id="category" class="mt-5 mb-5">
             <div class="container">
-                <h2>EXPLORE BY CATEGORY</h2>
+                <h2 class="mb-3">EXPLORE BY CATEGORY</h2>
+                <!--<div class="category-slider d-flex flex-row">
+                  <div class="category-slider__item">
+                    <img class="category-slider__item-img" src="https://picsum.photos/180/230" alt="Game logo">
+                    <h5 class="category-slider__item-title mt-3 mb-0">Game title</h5>
+                  </div>
+                  <div class="category-slider__item">
+                    <img class="category-slider__item-img" src="https://picsum.photos/180/230" alt="Game logo">
+                    <h5 class="category-slider__item-title mt-3 mb-0">Game title</h5>
+                  </div>
+                  <div class="category-slider__item">
+                    <img class="category-slider__item-img" src="https://picsum.photos/180/230" alt="Game logo">
+                    <h5 class="category-slider__item-title mt-3 mb-0">Game title</h5>
+                  </div>
+                  <div class="category-slider__item">
+                    <img class="category-slider__item-img" src="https://picsum.photos/180/230" alt="Game logo">
+                    <h5 class="category-slider__item-title mt-3 mb-0">Game title</h5>
+                  </div>
+                </div> -->
             </div>
 
 
@@ -154,7 +170,7 @@
         </section>
     </main>
 
-    <footer class="py-4 vh-10 w-100 position-absolute">
+  <footer class="mt-3 py-4 vh-10 w-100 position-absolute">
       <div class="container">
           <div class="row">
               <div class="col-4 d-none d-lg-block ">
