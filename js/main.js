@@ -17,7 +17,6 @@ var url = "https://api.codetabs.com/v1/proxy/?quest=https://store.steampowered.c
 fetch(url)
     .then((resp) => resp.json())
     .then(function(data) {
-      console.log(data);
       var carousel = document.getElementsByClassName("carousel-inner")[0];
       
       var item = createNode("div");
@@ -34,7 +33,7 @@ fetch(url)
 
       captionDiv.setAttribute('class', 'carousel-caption d-none d-md-block pb-0');
       caption.setAttribute('class', 'carousel-caption__title mb-0 py-2');
-      caption.innerHTML = data.specials.items[0].name;
+      caption.innerHTML = "<a href=descriptionPage/?id=" + data.specials.items[0].id + ">" + data.specials.items[0].name + "</a>";
 
       append(captionDiv, caption);
       append(item, img);
@@ -57,7 +56,7 @@ fetch(url)
 
         captionDiv.setAttribute('class', 'carousel-caption d-none d-md-block pb-0');
         caption.setAttribute('class', 'carousel-caption__title mb-0 py-2');
-        caption.innerHTML = data.specials.items[i].name;
+        caption.innerHTML = "<a href=descriptionPage/?id=" + data.specials.items[i].id + ">" + data.specials.items[i].name + "</a>";
 
         append(captionDiv, caption);
         append(item, img);
@@ -66,7 +65,7 @@ fetch(url)
       }
     })
     .catch(function(error) {
-        console.log(error);
+        //console.log(error);
     });
 
 
@@ -97,7 +96,7 @@ fetch(url)
         img.style.width = "180px"
 
         title.setAttribute('class', "slider__item-title mt-3 mb-0");
-        title.innerHTML = data[i].title;
+        title.innerHTML = "<a href=descriptionPage/?gameID=" + data[i].gameID + ">" + data[i].title+ "</a>";
         price.setAttribute('class', "slider__item-price mt-2");
         price.innerHTML = "£<span id=\"top-deals-price\">" + data[i].salePrice + "</span>";
 
@@ -122,7 +121,7 @@ fetch(url)
       })
     })
     .catch(function(error) {
-        console.log(error);
+        //console.log(error);
     });
 
 
@@ -176,7 +175,7 @@ fetch(url)
                 continue;
               }
 
-              price.innerHTML = "£ <span id=\"new-realses-price\">"+data.new_releases.items[i].final_price/100+"</span>";
+              price.innerHTML = "<a href='descriptionPage/?id="+ data.new_releases.items[i].id +"'>£ <span id=\"new-realses-price\">"+String(data.new_releases.items[i].final_price/100)+"</span>";
 
               updateNewReleasePrices(price, data.new_releases.items[i].id)
             }
@@ -194,8 +193,12 @@ function updateNewReleasePrices(element, id){
 
     .then((resp) => resp.json())
     .then(function(data) {
-    element.innerHTML = "<a href="+  +">£ <span id=\"new-realses-price\">"+data[0].cheapest+"</span></a>"})
-    .catch(function(error){
+
+      if(data.length == 0){return;}
+
+      element.innerHTML = "<a href='descriptionPage/?id="+ id +"'>£ <span id=\"new-realses-price\">"+data[0].cheapest+"</span></a>"})
+      .catch(function(error){
+      //console.log(error);
       return;
     });
 

@@ -20,6 +20,10 @@ h1, h2, h5 {
     font-family: 'Fjalla One', sans-serif;
 }
 
+h5 a, h5 a:hover, h5 a:visited{
+    color: white;
+}
+
 .introduction {
     height: 80vh;
     width: 100%;
