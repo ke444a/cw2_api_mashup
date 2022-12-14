@@ -9,3 +9,13 @@ $(function() {
     nextArrow: '<button type="button" class="slick-next"><i class="fa-solid fa-circle-chevron-right"></i></i></button>',
   });
 })
+
+$(function() {
+  $('.category-slider').slick({
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    speed: 1000,
+    prevArrow: '<button type="button" class="slick-prev"><i class="fa-solid fa-circle-chevron-left"></i></button>',
+    nextArrow: '<button type="button" class="slick-next"><i class="fa-solid fa-circle-chevron-right"></i></i></button>',
+  });
+})
