@@ -29,8 +29,6 @@ fetch(url)
       img.setAttribute('class', 'd-block w-100 h-100');
       img.setAttribute('src', data.specials.items[0].large_capsule_image);
 
-      data.new_releases.items[i];
-
       captionDiv.setAttribute('class', 'carousel-caption d-none d-md-block pb-0');
       caption.setAttribute('class', 'carousel-caption__title mb-0 py-2');
       caption.innerHTML = "<a href=descriptionPage.html?id=" + data.specials.items[0].id + ">" + data.specials.items[0].name + "</a>";
