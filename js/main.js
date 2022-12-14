@@ -17,7 +17,6 @@ var url = "https://api.codetabs.com/v1/proxy/?quest=https://store.steampowered.c
 fetch(url)
     .then((resp) => resp.json())
     .then(function(data) {
-      console.log(data);
       var carousel = document.getElementsByClassName("carousel-inner")[0];
       
       var item = createNode("div");
@@ -66,7 +65,7 @@ fetch(url)
       }
     })
     .catch(function(error) {
-        console.log(error);
+        //console.log(error);
     });
 
 
@@ -122,7 +121,7 @@ fetch(url)
       })
     })
     .catch(function(error) {
-        console.log(error);
+        //console.log(error);
     });
 
 
@@ -176,8 +175,6 @@ fetch(url)
                 continue;
               }
 
-              console.log(data.new_releases.items[i]);
-
               price.innerHTML = "<a href='descriptionPage/?id="+ data.new_releases.items[i].id +"'>£ <span id=\"new-realses-price\">"+String(data.new_releases.items[i].final_price/100)+"</span>";
 
               updateNewReleasePrices(price, data.new_releases.items[i].id)
@@ -186,7 +183,7 @@ fetch(url)
             
     })
     .catch(function(error) {
-        console.log(error);
+        //console.log(error);
     });
 
 function updateNewReleasePrices(element, id){
@@ -201,7 +198,7 @@ function updateNewReleasePrices(element, id){
 
       element.innerHTML = "<a href='descriptionPage/?id="+ id +"'>£ <span id=\"new-realses-price\">"+data[0].cheapest+"</span></a>"})
       .catch(function(error){
-      console.log(error);
+      //console.log(error);
       return;
     });
 
