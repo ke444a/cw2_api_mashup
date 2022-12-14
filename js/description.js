@@ -52,14 +52,10 @@ function callFetch() {
             append(item, img);
             append(carousel, item)
 
-
-
             for(var i = 1; i < screenshots.length; i++){
 
               let item = createNode("div");
               let img = createNode("img");
-              let captionDiv = createNode("div");
-              let caption = createNode("h5");
 
               item.setAttribute('class','carousel-item');
 
@@ -69,6 +65,8 @@ function callFetch() {
               append(item, img);
               append(carousel, item)
             }
+
+
         })
         .catch(function(error) {
         console.log(error);
