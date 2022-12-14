@@ -176,7 +176,9 @@ fetch(url)
                 continue;
               }
 
-              price.innerHTML = "£ <span id=\"new-realses-price\">"+data.new_releases.items[i].final_price/100+"</span>";
+              console.log(data.new_releases.items[i]);
+
+              price.innerHTML = "<a href='singlePage?id="+ data.new_releases.items[i].id +"'>£ <span id=\"new-realses-price\">"+String(data.new_releases.items[i].final_price/100)+"</span>";
 
               updateNewReleasePrices(price, data.new_releases.items[i].id)
             }
@@ -184,7 +186,7 @@ fetch(url)
             
     })
     .catch(function(error) {
-        //console.log(error);
+        console.log(error);
     });
 
 function updateNewReleasePrices(element, id){
@@ -194,8 +196,12 @@ function updateNewReleasePrices(element, id){
 
     .then((resp) => resp.json())
     .then(function(data) {
-    element.innerHTML = "<a href="+  +">£ <span id=\"new-realses-price\">"+data[0].cheapest+"</span></a>"})
-    .catch(function(error){
+
+      if(data.length == 0){return;}
+
+      element.innerHTML = "<a href='singlePage?id="+ id +"'>£ <span id=\"new-realses-price\">"+data[0].cheapest+"</span></a>"})
+      .catch(function(error){
+      console.log(error);
       return;
     });
 
