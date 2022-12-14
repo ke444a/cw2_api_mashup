@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search for Games</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Overpass:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="css/browse-page.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg fixed-top pb-md-2 pt-1">
+          <div class="container">
+            <img class="navbar-brand d-none d-lg-block animate__animated animate__slideInDown" id="navBarLogoBig" src="img/logo(Small).png" alt="vapourLogo">
+            <img class="navbar-brand d-none d-md-block d-lg-none animate__animated animate__slideInDown" id="navBarLogoMid" src="img/logo(Phone).png" alt="vapourLogo">
+            <img class="navbar-brand d-block d-md-none animate__animated animate__slideInDown ps-4" id="navBarLogoSmall" src="img/logo(Phone).png" alt="vapourLogo">
+            <form class="container-fluid pe-lg-3 pe-md-3 d-none d-md-block col-md-7 col-lg-8">
+              <div class="input-group">
+                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+                <input type="text" class="form-control" id ="mainSearch" placeholder="Wot Game" aria-label="Search" aria-describedby="basic-addon1">
+                <button type="button" class="btn btn-outline-warning">Search</button>
+              </div>
+            </form>
+            <form class="container-fluid px-lg-3 d-sm-block d-md-none fixed-bottom pb-4">
+              <div class="input-group">
+                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+                <input type="text" class="form-control" id ="mainSearch" placeholder="Wot Game" aria-label="Search" aria-describedby="basic-addon1">
+                <button type="button" class="btn btn-warning">Search</button>
+              </div>
+            </form>
+            <button class="navbar-toggler d-none d-sm-block d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <button class="navbar-toggler d-block d-sm-none mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse px-lg-2" id="navbarSupportedContent">
+              <ul class="navbar-nav mb-lg-0 ">
+                <li class="nav-item">
+                  <a class="nav-link hvr-grow" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="browse.html">Browse</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle hvr-grow" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Console
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a class="dropdown-item" href="#">PC</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Xbox</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Playstation</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Nintendo</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">VR</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle hvr-grow" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Genre
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a class="dropdown-item" href="#">FPS</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">RPG</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Puzzle</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Sports</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Simulation</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link hvr-grow" href="#">Help</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="tab mt-5 mb-3 animate__animated animate__fadeIn animate__slow">
+            <div class="container">
+                <h1 class="pt-4 pb-2">Browse Games by Genre</h1>
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link tab-link" onclick="openGameCategory(event, 'action')">Action</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link tab-link" onclick="openGameCategory(event, 'sports')">Sports</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link tab-link" onclick="openGameCategory(event, 'strategy')">Strategy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link tab-link" onclick="openGameCategory(event, 'horror')">Horror</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link tab-link" onclick="openGameCategory(event, 'rpg')">RPG</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link tab-link" onclick="openGameCategory(event, 'adventure')">Adventure</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link tab-link" onclick="openGameCategory(event, 'simulation')">Simulation</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link tab-link" onclick="openGameCategory(event, 'indie')">Indie</a>
+                    </li>
+                </ul>
+    
+                <div id="action" class="bgimg tab-content py-5 animate__animated animate__fadeIn animate__slow">
+                    <div class="row">
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div id="sports" class="bgimg tab-content py-5 animate__animated animate__fadeIn animate__slow">
+                    <div class="row">
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="strategy" class="bgimg tab-content py-5 animate__animated animate__fadeIn animate__slow">
+                    <div class="row">
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="horror" class="bgimg tab-content py-5 animate__animated animate__fadeIn animate__slow">
+                    <div class="row">
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="rpg" class="bgimg tab-content py-5 animate__animated animate__fadeIn animate__slow">
+                    <div class="row">
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="adventure" class="bgimg tab-content py-5 animate__animated animate__fadeIn animate__slow">
+                    <div class="row">
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="simulation" class="bgimg tab-content py-5 animate__animated animate__fadeIn animate__slow">
+                    <div class="row">
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="indie" class="bgimg tab-content py-5 animate__animated animate__fadeIn animate__slow">
+                    <div class="row">
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 text-center">
+                            <div class="card d-inline-block">
+                                <div class="card-link-wrapper text-center">
+                                    <img src="https://store-images.s-microsoft.com/image/apps.60926.13566179389346908.77ed19c8-2a9f-4060-a02b-5f9ab93826e2.63c3de94-ebae-43be-a96c-26a8d738b1c0?w=200"
+                                    class="card-img-top w-100" alt="Game image">
+                                    <a href="#gamelink" class="btn card-link fw-bold">DETAILS <i class="fa-solid fa-chevron-right"></i></a>
+                                </div>
+                                <div class="card-body pt-2 pb-1 text-start">
+                                    <a href="#gamelink" class="card-title fs-5">Game title</a>
+                                    <p class="card-text mb-0">£ 14.99</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="mt-3 py-4 vh-10 w-100 position-absolute">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 d-none d-lg-block ">
+                    <img class="navbar-brand d-none d-lg-block" id="footerLogo" src="img/logo(NoText).png" alt="vapourLogo">
+                </div>
+                <div class="col-4 d-none d-lg-block text-center">
+                    <ul>
+                        <li class = "footerList"><a class="footerLink hvr-grow" href="#">Terms of Use</a></li>
+                        <li class = "footerList"><a class="footerLink hvr-grow" href="#">About us</a></li>
+                        <li class = "footerList"><a class="footerLink hvr-grow" href="#">Contact</a></li>
+                        <li class = "footerList"><a class="footerLink hvr-grow" href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 d-lg-none text-center">
+                    <ul>
+                        <li class = "footerList"><a class="footerLink hvr-grow" href="#">Terms of Use</a></li>
+                        <li class = "footerList"><a class="footerLink hvr-grow" href="#">About us</a></li>
+                        <li class = "footerList"><a class="footerLink hvr-grow" href="#">Contact</a></li>
+                        <li class = "footerList"><a class="footerLink hvr-grow" href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-4 d-none d-lg-block text-end">
+                    <a class="iconLink" href="#"><i class="fa-brands fa-twitter fa-xl px-4 hvr-grow-shadow" id="twitterLink"></i></a>
+                    <a class="iconLink" href="#"><i class="fa-brands fa-facebook fa-xl px-4 hvr-grow-shadow" id="facebookLink"></i></a>
+                    <a class="iconLink" href="#"><i class="fa-brands fa-instagram fa-xl px-4 hvr-grow-shadow" id="instaLink"></i></a>
+                    <a class="iconLink" href="#"><i class="fa-brands fa-twitch fa-xl px-4 hvr-grow-shadow" id="twitchLink"></i></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-8 d-none d-md-block d-lg-none text-center mx-auto ps-5 py-2">
+                    <a class="iconLink" href="#"><i class="fa-brands fa-twitter fa-xl px-4 hvr-grow-shadow" id="twitterLink"></i></a>
+                    <a class="iconLink" href="#"><i class="fa-brands fa-facebook fa-xl px-4 hvr-grow-shadow" id="facebookLink"></i></a>
+                    <a class="iconLink" href="#"><i class="fa-brands fa-instagram fa-xl px-4 hvr-grow-shadow" id="instaLink"></i></a>
+                    <a class="iconLink" href="#"><i class="fa-brands fa-twitch fa-xl px-4 hvr-grow-shadow" id="twitchLink"></i></a>
+                </div>
+                <div class="col-12 d-none d-sm-block d-md-none text-center mx-auto ps-5 py-2">
+                    <a class="iconLink" href="#"><i class="fa-brands fa-twitter fa-xl px-3" id="twitterLink"></i></a>
+                    <a class="iconLink" href="#"><i class="fa-brands fa-facebook fa-xl px-3" id="facebookLink"></i></a>
+                    <a class="iconLink" href="#"><i class="fa-brands fa-instagram fa-xl px-3" id="instaLink"></i></a>
+                    <a class="iconLink" href="#"><i class="fa-brands fa-twitch fa-xl px-3" id="twitchLink"></i></a>
+                </div>
+                <div class="col-12 d-sm-none text-center mx-auto ps-5 py-1">
+                    <a class="iconLink" href="#"><i class="fa-brands fa-twitter fa-xl px-2" id="twitterLink"></i></a>
+                    <a class="iconLink" href="#"><i class="fa-brands fa-facebook fa-xl px-2" id="facebookLink"></i></a>
+                    <a class="iconLink" href="#"><i class="fa-brands fa-instagram fa-xl px-2" id="instaLink"></i></a>
+                    <a class="iconLink" href="#"><i class="fa-brands fa-twitch fa-xl px-2" id="twitchLink"></i></a>
+                </div>
+            </div>
+        <div class="line">
+            <hr>
+        </div>
+        <div class="row">
+        <div class="col-6 d-none d-lg-block text-muted text-start">
+            <p>Copyright bit</p>
+        </div>
+        <div class="col-6 d-none d-lg-block text-muted text-end">
+            <p>Some other legal thing</p>
+        </div>
+        <div class="col-12 d-lg-none footerText text-muted text-center ps-4">
+            <p>Legal Stuff</p>
+        </div>
+        </div>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+    <script src="js/category.js"></script>
+    </body>
+    
+    </html>
