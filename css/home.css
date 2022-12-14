@@ -159,6 +159,10 @@ footer
     color: orange;
 }
 
+#main{
+    margin-top: 115px;
+}
+
 .hvr-grow-shadow {
     display: inline-block;
     vertical-align: middle;
