@@ -261,3 +261,7 @@ footer
 .bgimg {
     background-image: url("../img/GameBackGroundSpreadGradient.png");
 }
+
+#activeFooter{
+    color: orange;
+}
