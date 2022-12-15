@@ -76,6 +76,11 @@ function callFetch() {
 
             let cheapestPriceDiv = document.getElementById("cheapestPriceDiv");
 
+            if (data.is_free){
+              cheapestPriceDiv.innerHTML= "<h3>Steam</h3><a href='https://store.steampowered.com/app/" + id + "'>FREE!</a>";
+              return;
+            }
+
             let url = "https://www.cheapshark.com/api/1.0/deals?steamAppID=" + id;
 
             fetch(url)
