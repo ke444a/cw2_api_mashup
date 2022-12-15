@@ -1,12 +1,3 @@
-/*
-#F0EDEE
-#313638
-#2B2C28
-#131515
-#020402
-#262730
-*/
-
 /* Main components */
 html {
     scroll-behavior: smooth;
@@ -22,22 +13,34 @@ h1, h2, h5 {
     font-family: 'Fjalla One', sans-serif;
 }
 
-header {
+.header {
     height: 15vh;
 }
 
+h5 a, .price-title a{
+    color: #F0EDEE;
+}
+
+h5 a:hover, .price-title a:hover {
+    color: #ffc107;
+}
+
 /* Introduction */
+
 .introduction {
-    height: 80vh;
+    max-height: 80vh;
     width: 100%;
+    height: 100%;
 }
 
 .introduction__img {
     max-width: 70%;
 }
 
-.introduction__content-text {
-    max-width: 50%;
+@media screen and (min-width: 850px) {
+    .introduction__content-text {
+        max-width: 65%;
+    }
 }
 
 /* Bootstrap carousel */
@@ -46,24 +49,55 @@ header {
 }
 
 .carousel-item {
-    height: 450px;
+    max-height: 450px;
 }
 
 .carousel-caption__title {
-    background-color: rgba(19, 21, 21, 0.5);
+    background-color: rgba(19, 21, 21, 0.9);
+    font-size: 0.9rem;
 }
 
-/* Slick carousel */
+@media screen and (min-width: 700px) {
+    .carousel-caption__title {
+        font-size: 1.25rem;
+    }
+}
 
+.carousel-caption__title a{
+    text-decoration: none;
+}
+
+/* Slick carousel for Top Deals */
 .slick-prev, .slick-next {
     color: inherit;
     background-color: inherit;
     border: none;
-    margin: 0 20px;
+}
+
+.slider__item-img {
+    height: 7rem;
+    max-width: 100%;
+}
+
+/* New Releases */
+.new-releases__img {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Category */
+.category__img {
+    width: 100%;
+}
+
+.category__link {
+    transition: all 0.3s ease-in-out;
+}
+
+.category__link:hover, .new-releases__img:hover {
+    transform: scale(1.2);
 }
 
 /* Nav */
-
 nav
 {
     font-family: 'Fjalla One', sans-serif;
@@ -147,7 +181,7 @@ footer
 .footerLink
 {
     text-decoration: none;
-    color: white
+    color: white;
 }
 
 .footerLink:hover
@@ -157,18 +191,22 @@ footer
 
 .footerLink:active
 {
-    color: white
+    color: orange;
 }
 
 .iconLink
 {
     text-decoration: none;
-    color: white
+    color: white;
 }
 
 .line
 {
     color: orange;
+}
+
+#main{
+    margin-top: 115px;
 }
 
 .hvr-grow-shadow {
