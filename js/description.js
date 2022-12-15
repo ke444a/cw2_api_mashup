@@ -78,19 +78,37 @@ function callFetch() {
 
             let url = "https://www.cheapshark.com/api/1.0/deals?steamAppID=" + id;
 
-            
-
             fetch(url)
               .then((resp) => resp.json())
               .then(function(dealData) {
-                cheapestPriceDiv.innerHTML = "<a href='https://www.cheapshark.com/redirect?dealID=" + dealData[0].dealID + "'>$" + dealData[0].salePrice + "</a>";
+                let cheapestStoreID = dealData[0].storeID;
+                let cheapestStoreName = "";
+
+                // Get store data about the cheapest deal
+                // (the first fetch will be completed before the second hence why the dealData stuff is inside this one as it goes after)
+                fetch('https://www.cheapshark.com/api/1.0/stores')
+                  .then((resp) => resp.json())
+                  .then(function(storeData) {
+                    storeData.forEach(store => {
+                        if (store.storeID == cheapestStoreID)
+                        {
+                            cheapestStoreName = store.storeName;
+                        }
+                    });
+                    cheapestPriceDiv.innerHTML= "<h3>" + cheapestStoreName + "</h3><a href='https://www.cheapshark.com/redirect?dealID=" + dealData[0].dealID + "'>$" + dealData[0].salePrice + "</a>";
+                
+                  })
+                  .catch(function(error) {
+                    console.log(error);
+                  });
+                
               })
               .catch(function(error) {
-              console.log(error);
+                console.log(error);
               });
 
         })
         .catch(function(error) {
-        console.log(error);
+          console.log(error);
         });
 }
