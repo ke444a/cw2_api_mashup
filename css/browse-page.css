@@ -1,0 +1,86 @@
+.container-fluid {
+    max-width: 95%;
+}
+
+.tab-content {
+    display:none;
+}
+
+.tab-link, .tab-link:hover {
+    color: inherit;
+    cursor: pointer;
+}
+
+.card {
+    background-color: #D0CFCF;
+}
+
+.card-body {
+    color: #020402;
+}
+
+.card-link-wrapper {
+    cursor:pointer;
+    position: relative;
+}
+
+.card-link-wrapper:hover img {
+    opacity: 0.8;
+}
+
+.card-link-wrapper:hover .card-link {
+   opacity: 1;
+}
+
+.card-img-top {
+    max-width: 220px;
+    max-height: 320px;
+    transition: .5s ease;
+}
+
+.card-link {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 85%;
+    left: 10%;
+    width: 80%;
+    background-color: #D0CFCF;
+}
+
+@media screen and (max-width: 900px) and (min-width: 720px) {
+    .card-link {
+        top: 82%;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .card-link {
+        top: 78%;
+        font-size: 0.8rem;
+    }
+
+    .card-title {
+        font-size: 0.85rem !important;
+    }
+
+    .card-text {
+        font-size: 0.7rem !important;
+    }
+}
+
+.card-title {
+    cursor: pointer;
+    color: inherit;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.card-title:hover{
+    color: inherit;
+    text-decoration: underline;
+}
+
+.card-text {
+    font-size: 1rem;
+}
