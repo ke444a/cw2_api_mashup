@@ -7,10 +7,9 @@ function append(parent, el) {
 }
 
 
-//fetch CAROUSEL
+// Fetching CAROUSEL with special offers:
 
-//how many items do you want in the carousel?
-var carouselItems = 5;
+var carouselItems = 5;  // amount of items in the carousel
 
 var url = "https://api.codetabs.com/v1/proxy/?quest=https://store.steampowered.com/api/featuredcategories/?cc=EE&amp;l=english&v=1&trailer=1%20HTTP/1.1";
 
@@ -29,7 +28,7 @@ fetch(url)
       img.setAttribute('class', 'd-block w-100 h-100');
       img.setAttribute('src', data.specials.items[0].large_capsule_image);
 
-      captionDiv.setAttribute('class', 'carousel-caption d-none d-md-block pb-0');
+      captionDiv.setAttribute('class', 'carousel-caption d-block pb-0');
       caption.setAttribute('class', 'carousel-caption__title mb-0 py-2');
       caption.innerHTML = "<a href=descriptionPage.html?id=" + data.specials.items[0].id + ">" + data.specials.items[0].name + "</a>";
 
@@ -37,8 +36,6 @@ fetch(url)
       append(item, img);
       append(item, captionDiv);
       append(carousel, item)
-
-
 
       for(var i = 1; i < carouselItems; i++){
 
@@ -52,7 +49,7 @@ fetch(url)
         img.setAttribute('class', 'd-block w-100 h-100');
         img.setAttribute('src', data.specials.items[i].large_capsule_image)
 
-        captionDiv.setAttribute('class', 'carousel-caption d-none d-md-block pb-0');
+        captionDiv.setAttribute('class', 'carousel-caption d-block pb-0');
         caption.setAttribute('class', 'carousel-caption__title mb-0 py-2');
         caption.innerHTML = "<a href=descriptionPage.html?id=" + data.specials.items[i].id + ">" + data.specials.items[i].name + "</a>";
 
@@ -63,14 +60,12 @@ fetch(url)
       }
     })
     .catch(function(error) {
-        //console.log(error);
     });
 
 
-//fetch TOP DEALS
+// Fetching TOP DEALS:
 
-//how many items?
-var topDealItemCount = 50;
+var topDealItemCount = 50;  // amount of items in Top Deals
 
 url = "https://www.cheapshark.com/api/1.0/deals?steamworks=1&pageSize=" + topDealItemCount;
 
@@ -91,14 +86,11 @@ fetch(url)
         var title = createNode("h5");
         var price = createNode("p");
 
-        item.setAttribute('class',"deals-slider__item" );
-        img.setAttribute('class', "slider__item-img");
+        item.setAttribute('class',"deals-slider__item mx-2" );
+        img.setAttribute('class', "slider__item-img w-100");
         img.setAttribute('src', data[i].thumb);
 
-        img.style.width = "240px"
-        img.style.height = "90px"
-
-        title.setAttribute('class', "slider__item-title mt-3 mb-0");
+        title.setAttribute('class', "slider__item-title mt-3 mb-0 fs-6");
         title.innerHTML = "<a href=descriptionPage.html?id=" + data[i].steamAppID + ">" + data[i].title+ "</a>";
         price.setAttribute('class', "slider__item-price mt-2");
         price.innerHTML = "£<span id=\"top-deals-price\">" + data[i].salePrice + "</span>";
@@ -124,16 +116,15 @@ fetch(url)
       })
     })
     .catch(function(error) {
-        //console.log(error);
     });
 
 
 
-//fetch NEW RELEASES
+// Fetching NEW RELEASES:
 
 var newReleaseItemRows = 2;
 
-var newReleaseCount = 4*newReleaseItemRows;
+var newReleaseCount = 4 * newReleaseItemRows;
 
 var url = "https://api.codetabs.com/v1/proxy/?quest=https://store.steampowered.com/api/featuredcategories/?cc=EE&amp;l=english&v=1&trailer=1%20HTTP/1.1";
   
@@ -163,22 +154,20 @@ fetch(url)
               append(rows, div);
 
               var img = createNode("img");
-              img.setAttribute("class", "w-100");
+              img.setAttribute("class", "w-100 new-releases__img");
               img.setAttribute("src", data.new_releases.items[i].large_capsule_image);
               append(div, img);
               
-              
-              
               var price = createNode("p");
-              price.setAttribute("class", "text-end fw-bold mt-2");
+              price.setAttribute("class", "price-title text-end fw-bold mt-2 fs-6");
               append(div, price);
 
               if (data.new_releases.items[i].final_price == 0){
-                price.innerHTML = "FREE!"
+                price.innerHTML = "<a href='descriptionPage.html?id="+ data.new_releases.items[i].id +"'>FREE!</a>";
                 continue;
               }
 
-              price.innerHTML = "<a href='descriptionPage.html?id="+ data.new_releases.items[i].id +"'>£ <span id=\"new-realses-price\">"+String(data.new_releases.items[i].final_price/100)+"</span>";
+              price.innerHTML = "<a href='descriptionPage.html?id="+ data.new_releases.items[i].id +"'>£ <span id=\"new-realses-price\">"+String(data.new_releases.items[i].final_price/100)+"</span></a>";
 
               updateNewReleasePrices(price, data.new_releases.items[i].id)
             }
@@ -186,7 +175,6 @@ fetch(url)
             
     })
     .catch(function(error) {
-        //console.log(error);
     });
 
 function updateNewReleasePrices(element, id){
@@ -201,7 +189,6 @@ function updateNewReleasePrices(element, id){
 
       element.innerHTML = "<a href='descriptionPage.html?id="+ id +"'>£ <span id=\"new-realses-price\">"+data[0].cheapest+"</span></a>"})
       .catch(function(error){
-      //console.log(error);
       return;
     });
 
