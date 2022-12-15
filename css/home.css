@@ -22,7 +22,7 @@ h1, h2, h5 {
     font-family: 'Fjalla One', sans-serif;
 }
 
-header {
+.header {
     height: 15vh;
 }
 
@@ -62,8 +62,20 @@ header {
     margin: 0 20px;
 }
 
-/* Nav */
+/* Category */
+.category__img {
+    width: 100%;
+}
 
+.category__link {
+    transition: all 0.3s ease-in-out;
+}
+
+.category__link:hover {
+    transform: scale(1.2);
+}
+
+/* Nav */
 nav
 {
     font-family: 'Fjalla One', sans-serif;
