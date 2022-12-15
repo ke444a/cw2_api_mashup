@@ -20,15 +20,6 @@ h1, h2, h5 {
     font-family: 'Fjalla One', sans-serif;
 }
 
-#cheapestPriceDiv a{
-    font-size: 30px;
-    color: white;
-}
-
-h5 a, h5 a:hover, h5 a:visited{
-    color: white;
-}
-
 .introduction {
     height: 80vh;
     width: 100%;
@@ -150,7 +141,7 @@ footer
 
 .footerLink:active
 {
-    color: white
+    color: orange
 }
 
 .iconLink
@@ -162,10 +153,6 @@ footer
 .line
 {
     color: orange;
-}
-
-#main{
-    margin-top: 115px;
 }
 
 .hvr-grow-shadow {
