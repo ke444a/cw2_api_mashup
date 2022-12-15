@@ -24,79 +24,76 @@
 </head>
 <body>
     
-    <!--Nav Bar-->
-    <nav class="navbar navbar-dark bg-dark navbar-expand-lg fixed-top pb-md-2 pt-1">
-        <div class="container">
-          <img class="navbar-brand d-none d-lg-block animate__animated animate__slideInDown" id="navBarLogoBig" src="img/logo(Small).png" alt="vapourLogo">
-          <img class="navbar-brand d-none d-md-block d-lg-none animate__animated animate__slideInDown" id="navBarLogoMid" src="img/logo(Phone).png" alt="vapourLogo">
-          <img class="navbar-brand d-block d-md-none animate__animated animate__slideInDown ps-4" id="navBarLogoSmall" src="img/logo(Phone).png" alt="vapourLogo">
-          <form class="container-fluid pe-lg-3 pe-md-3 d-none d-md-block col-md-7 col-lg-8">
+     <!-- Header -->
+  <header class="header">
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg sticky-top">
+      <div class="container">
+        <a href="index.html"><img class="navbar-brand d-none d-lg-block ps-2" id="navBarLogoBig" src="img/logo(Small).png" alt="vapourLogo" > </a>
+        <a href="index.html"><img class="navbar-brand d-none d-md-block d-lg-none ps-2" id="navBarLogoMid" src="img/logo(Phone).png" alt="vapourLogo"> </a>
+        <a href="index.html"><img class="navbar-brand d-block d-md-none ps-2" id="navBarLogoSmall" src="img/logo(Phone).png" alt="vapourLogo"> </a>
+        <form class="container d-none d-md-block d-lg-none col-7">
+          <div class="input-group">
+            <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+            <input type="text" class="form-control" placeholder="Wot Game" aria-label="Search" aria-describedby="basic-addon1">
+            <button type="button" class="btn btn-outline-warning">Search</button>
+          </div>
+        </form>
+        <button class="navbar-toggler me-3 d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <button class="navbar-toggler d-none ms-3 d-md-block d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav col-lg-8">
+            <li class="nav-item pe-3">
+              <form class="d-md-none py-3 text-start">
+                <div class="input-group">
+                  <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+                  <input type="text" class="form-control" placeholder="Wot Game" aria-label="Search" aria-describedby="basic-addon1">
+                  <button type="button" class="btn btn-outline-warning">Search</button>
+                </div>
+              </form>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active pe-3" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link hvr-grow pe-3" href="browse.html">Browse</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle hvr-grow" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Genre</a>
+              <ul class="dropdown-menu dropdown-menu-dark">
+                <li><a class="dropdown-item" href="category.html">Action</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="category.html">Sports</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="category.html">Strategy</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="category.html">Horror</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="category.html">RPG</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="category.html">Adventure</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="category.html">Simulation</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="category.html">Indie</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="container d-none d-lg-block col-lg-4">
             <div class="input-group">
               <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
-              <input type="text" class="form-control" id ="mainSearch" placeholder="Wot Game" aria-label="Search" aria-describedby="basic-addon1">
+              <input type="text" class="form-control" placeholder="Wot Game" aria-label="Search" aria-describedby="basic-addon1">
               <button type="button" class="btn btn-outline-warning">Search</button>
             </div>
           </form>
-          <form class="container-fluid px-lg-3 d-sm-block d-md-none fixed-bottom pb-4">
-            <div class="input-group">
-              <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
-              <input type="text" class="form-control" id ="mainSearch" placeholder="Wot Game" aria-label="Search" aria-describedby="basic-addon1">
-              <button type="button" class="btn btn-warning">Search</button>
-            </div>
-          </form>
-          <button class="navbar-toggler d-none d-sm-block d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <button class="navbar-toggler d-block d-sm-none mb-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-          <div class="collapse navbar-collapse px-lg-2" id="navbarSupportedContent">
-            <ul class="navbar-nav mb-lg-0 ">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link hvr-grow" href="#">Browse</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle hvr-grow" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Console
-                </a>
-                <ul class="dropdown-menu dropdown-menu-dark">
-                  <li><a class="dropdown-item" href="#">PC</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Xbox</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Playstation</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Nintendo</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">VR</a></li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle hvr-grow" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Genre
-                </a>
-                <ul class="dropdown-menu dropdown-menu-dark">
-                  <li><a class="dropdown-item" href="#">FPS</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">RPG</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Puzzle</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Sports</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Simulation</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link hvr-grow" href="#">Help</a>
-              </li>
-            </ul>
-          </div>
         </div>
-      </nav>
+      </div>
+    </nav>
+  
+  </header>
 
       <br>
       <br>
@@ -128,7 +125,7 @@
                 </div>
                 <div class="col-md-4 col-sm-6">
                     <h4>Q: Can I see more information about the games?</h4>
-                    <p>A: Yes! Once you find a game on the Discover Tab, hit the More Info button. This will show you everything you need to know about the game.</p>
+                    <p>A: Yes! Once you find a game on the Discover Tab, click the title or price. This will show you everything you need to know about the game.</p>
                 </div>
                 <div class="col-md-4 col-sm-6">
                     <h4>Q: Why can't I buy games here?</h4>
@@ -152,69 +149,50 @@
 
     <!--Footer-->
 
-    <footer class="py-4 vh-10 w-100 position-absolute">
+    <footer class="py-4 vh-10 w-100 position-absolute pt-5">
       <div class="container">
           <div class="row">
-              <div class="col-4 d-none d-lg-block ">
-                  <img class="navbar-brand d-none d-lg-block" id="footerLogo" src="img/logo(NoText).png" alt="vapourLogo">
+              <div class="col-4 d-none d-lg-block">
+                  <img class="navbar-brand" id="footerLogo" src="img/logo(NoText).png" alt="vapourLogo">
               </div>
-              <div class="col-4 d-none d-lg-block text-center">
+              <div class="col-12 col-lg-4 text-center pb-2">
                   <ul>
-                      <li class = "footerList"><a class="footerLink hvr-grow" href="termsOfUse.html">Terms of Use</a></li>
-                      <li class = "footerList"><a class="footerLink hvr-grow" href="#">About us</a></li>
+                      <li class = "footerList pb-2"><a class="footerLink hvr-grow" href="termsOfUse.html">Terms of Use</a></li>
+                      <li class = "footerList pb-2"><a class="footerLink hvr-grow" href="help.html">Help</a></li>
                       <li class = "footerList"><a class="footerLink hvr-grow" href="contactUs.html">Contact</a></li>
-                      <li class = "footerList"><a class="footerLink hvr-grow" href="help.html">FAQ</a></li>
+                      
                   </ul>
               </div>
-              <div class="col-12 d-lg-none text-center">
-                  <ul>
-                      <li class = "footerList"><a class="footerLink hvr-grow" href="termsOfUse.html">Terms of Use</a></li>
-                      <li class = "footerList"><a class="footerLink hvr-grow" href="#">About us</a></li>
-                      <li class = "footerList"><a class="footerLink hvr-grow" href="contactUs.html">Contact</a></li>
-                      <li class = "footerList"><a class="footerLink hvr-grow" href="help.html">FAQ</a></li>
-                  </ul>
+              <div class="col-12 col-md-8 col-lg-4 text-center text-lg-end mx-auto pt-2 pb-3">
+                  <a class="iconLink" href="#"><i class="fa-brands fa-twitter fa-xl ps-4 pe-3 hvr-grow-shadow" id="twitterLink"></i></a>
+                  <a class="iconLink" href="#"><i class="fa-brands fa-facebook fa-xl ps-2 pe-3 hvr-grow-shadow" id="facebookLink"></i></a>
+                  <a class="iconLink" href="#"><i class="fa-brands fa-instagram fa-xl ps-2 pe-3 hvr-grow-shadow" id="instaLink"></i></a>
+                  <a class="iconLink" href="#"><i class="fa-brands fa-twitch fa-xl ps-2 hvr-grow-shadow" id="twitchLink"></i></a>
               </div>
-              <div class="col-4 d-none d-lg-block text-end">
-                  <a class="iconLink" href="#"><i class="fa-brands fa-twitter fa-xl px-4 hvr-grow-shadow" id="twitterLink"></i></a>
-                  <a class="iconLink" href="#"><i class="fa-brands fa-facebook fa-xl px-4 hvr-grow-shadow" id="facebookLink"></i></a>
-                  <a class="iconLink" href="#"><i class="fa-brands fa-instagram fa-xl px-4 hvr-grow-shadow" id="instaLink"></i></a>
-                  <a class="iconLink" href="#"><i class="fa-brands fa-twitch fa-xl px-4 hvr-grow-shadow" id="twitchLink"></i></a>
-              </div>
-          </div>
-          <div class="row">
-              <div class="col-8 d-none d-md-block d-lg-none text-center mx-auto ps-5 py-2">
-                  <a class="iconLink" href="#"><i class="fa-brands fa-twitter fa-xl px-4 hvr-grow-shadow" id="twitterLink"></i></a>
-                  <a class="iconLink" href="#"><i class="fa-brands fa-facebook fa-xl px-4 hvr-grow-shadow" id="facebookLink"></i></a>
-                  <a class="iconLink" href="#"><i class="fa-brands fa-instagram fa-xl px-4 hvr-grow-shadow" id="instaLink"></i></a>
-                  <a class="iconLink" href="#"><i class="fa-brands fa-twitch fa-xl px-4 hvr-grow-shadow" id="twitchLink"></i></a>
-              </div>
-              <div class="col-12 d-none d-sm-block d-md-none text-center mx-auto ps-5 py-2">
-                  <a class="iconLink" href="#"><i class="fa-brands fa-twitter fa-xl px-3" id="twitterLink"></i></a>
-                  <a class="iconLink" href="#"><i class="fa-brands fa-facebook fa-xl px-3" id="facebookLink"></i></a>
-                  <a class="iconLink" href="#"><i class="fa-brands fa-instagram fa-xl px-3" id="instaLink"></i></a>
-                  <a class="iconLink" href="#"><i class="fa-brands fa-twitch fa-xl px-3" id="twitchLink"></i></a>
-              </div>
-              <div class="col-12 d-sm-none text-center mx-auto ps-5 py-1">
-                  <a class="iconLink" href="#"><i class="fa-brands fa-twitter fa-xl px-2" id="twitterLink"></i></a>
-                  <a class="iconLink" href="#"><i class="fa-brands fa-facebook fa-xl px-2" id="facebookLink"></i></a>
-                  <a class="iconLink" href="#"><i class="fa-brands fa-instagram fa-xl px-2" id="instaLink"></i></a>
-                  <a class="iconLink" href="#"><i class="fa-brands fa-twitch fa-xl px-2" id="twitchLink"></i></a>
-              </div>
-          </div>
+            </div>  
       <div class="line">
           <hr>
       </div>
-      <div class="row">
-      <div class="col-6 d-none d-lg-block text-muted text-start">
-          <p>Copyright bit</p>
+      <div class="row ps-2">
+      <div class="col-4 d-none d-lg-block text-muted text-start">
+          <p>© 2022 Group 4</p>
       </div>
-      <div class="col-6 d-none d-lg-block text-muted text-end">
-          <p>Some other legal thing</p>
+      <div class="col-4 d-none d-lg-block text-muted text-center ps-5">
+        <p>Alex Barczak, Danyl Kecha, Emma Martin</p>
+        <p>Lucy Thomson, Flynn Henderson, Martyn Bett</p>
+    </div>
+      <div class="col-4 d-none d-lg-block text-end">
+        <li class ="footerList link-muted pb-2"><a class="footerLink hvr-grow" href="https://wiki.teamfortress.com/wiki/User:RJackson/StorefrontAPI" target="_blank" rel="noopener noreferrer">Steam API</a></li>
+        <li class ="footerList link-muted"><a class="footerLink hvr-grow" href="https://apidocs.cheapshark.com/" target="_blank" rel="noopener noreferrer">Cheapshark API</a></li>
       </div>
-      <div class="col-12 d-lg-none footerText text-muted text-center ps-4">
-          <p>Legal Stuff</p>
-      </div>
-      </div>
+        <div class="col-12 d-lg-none text-center text-muted pt-2 ps-4 ps-md-5">
+            <p>© 2022 Group 4</p>
+            <li class ="footerList link-muted pb-3"><a class="footerLink hvr-grow" href="https://wiki.teamfortress.com/wiki/User:RJackson/StorefrontAPI" target="_blank" rel="noopener noreferrer">Steam API</a></li>
+            <li class ="footerList link-muted pb-3"><a class="footerLink hvr-grow" href="https://apidocs.cheapshark.com/" target="_blank" rel="noopener noreferrer">Cheapshark API</a></li>
+            <p>Alex Barczak, Danyl Kecha, Emma Martin</p>
+            <p>Lucy Thomson, Flynn Henderson, Martyn Bett</p>
+          </div>
+        </div>
       </div>
   </footer>
 
