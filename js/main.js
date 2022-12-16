@@ -65,9 +65,7 @@ fetch(url)
 
 // Fetching TOP DEALS:
 
-var topDealItemCount = 50;  // amount of items in Top Deals
-
-url = "https://www.cheapshark.com/api/1.0/deals?steamworks=1&pageSize=" + topDealItemCount;
+url = "https://www.cheapshark.com/api/1.0/deals?steamworks=1&pageSize=" + 50;
 
 fetch(url)
     .then((resp) => resp.json())
@@ -75,7 +73,7 @@ fetch(url)
 
       var slider = document.getElementsByClassName("deals-slider")[0];
 
-      for(var i = 0; i < topDealItemCount; i++){
+      for(var i = 0; i < 50; i++){
 
         if(data[i].steamAppID == null){
           continue;
@@ -116,6 +114,7 @@ fetch(url)
       })
     })
     .catch(function(error) {
+      console.log(error);
     });
 
 
