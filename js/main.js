@@ -65,9 +65,7 @@ fetch(url)
 
 // Fetching TOP DEALS:
 
-var topDealItemCount = 50;  // amount of items in Top Deals
-
-url = "https://www.cheapshark.com/api/1.0/deals?steamworks=1&pageSize=" + topDealItemCount;
+url = "https://www.cheapshark.com/api/1.0/deals?steamworks=1&pageSize=" + 50;
 
 fetch(url)
     .then((resp) => resp.json())
