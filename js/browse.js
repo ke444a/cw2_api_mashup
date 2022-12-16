@@ -27,7 +27,7 @@ function openPriceCategory(event, priceCategory) {
   }
 
   //price 1 is less than £5
-  let url = "https://www.cheapshark.com/api/1.0/deals?pageSize=50&upperPrice=5"
+  let url = "https://www.cheapshark.com/api/1.0/deals?pageSize=60&upperPrice=5"
   fetch(url)
         .then((resp) => resp.json())
         .then(function(data) {
@@ -54,7 +54,7 @@ function openPriceCategory(event, priceCategory) {
               append(row, column);
 
               var card = createNode('div');
-              card.setAttribute('class', 'card d-inline-block');
+              card.setAttribute('class', 'card d-inline-block h-100');
               append(column, card);
 
               var imgDiv = createNode('div');
@@ -80,7 +80,7 @@ function openPriceCategory(event, priceCategory) {
         });
       
   //price 2 is between £5 and £20
-  url = "https://www.cheapshark.com/api/1.0/deals?pageSize=50&upperPrice=20&lowerPrice=5"
+  url = "https://www.cheapshark.com/api/1.0/deals?pageSize=60&upperPrice=20&lowerPrice=5"
   fetch(url)
         .then((resp) => resp.json())
         .then(function(data) {
@@ -96,7 +96,7 @@ function openPriceCategory(event, priceCategory) {
             for (let j = 0; j < 4; j++){
               while(true){
                 dataIndex++;
-                if (data[dataIndex].steamAppID == null){
+                if (data[dataIndex%60].steamAppID == null){
                   continue;
                 }
                 break;
@@ -107,15 +107,15 @@ function openPriceCategory(event, priceCategory) {
               append(row, column);
 
               var card = createNode('div');
-              card.setAttribute('class', 'card d-inline-block');
+              card.setAttribute('class', 'card d-inline-block h-100');
               append(column, card);
 
               var imgDiv = createNode('div');
               imgDiv.setAttribute('class', 'card-link-wrapper text-center');
               append(card, imgDiv);
 
-              let link = "descriptionPage.html?id=" + data[dataIndex].steamAppID;
-              let imageSrc = data[dataIndex].thumb;
+              let link = "descriptionPage.html?id=" + data[dataIndex%60].steamAppID;
+              let imageSrc = data[dataIndex%60].thumb;
 
               imgDiv.innerHTML = '<a href="'+ link +'"><img src="' + imageSrc + '"class="card-img-top w-100" alt="Game image"></a><a href="'+ link +'" class="btn card-link fw-bold d-none d-sm-block px-sm-0 pb-0 pb-md-1 pt-md-2">DETAILS <i class="fa-solid fa-chevron-right"></i></a>';
 
@@ -123,7 +123,7 @@ function openPriceCategory(event, priceCategory) {
               bodyDiv.setAttribute('class', 'card-body pt-2 pt-md-3 pb-1 px-1 px-md-3 text-start lh-1');
               append(card, bodyDiv);
 
-              bodyDiv.innerHTML = '<a href="'+ link +'" class="card-title">' + data[dataIndex].title + '</a><p class="card-text mt-1 mb-0 mb-md-1 fw-bold">'+ data[dataIndex].salePrice +'</p>';
+              bodyDiv.innerHTML = '<a href="'+ link +'" class="card-title">' + data[dataIndex%60].title + '</a><p class="card-text mt-1 mb-0 mb-md-1 fw-bold">'+ data[dataIndex%60].salePrice +'</p>';
             }
           }
 
@@ -132,7 +132,7 @@ function openPriceCategory(event, priceCategory) {
           console.log(error);
         });
   //price 3 is between £20 and £35
-  url = "https://www.cheapshark.com/api/1.0/deals?pageSize=50&upperPrice=35&lowerPrice=20"
+  url = "https://www.cheapshark.com/api/1.0/deals?pageSize=60&upperPrice=35&lowerPrice=20"
   fetch(url)
         .then((resp) => resp.json())
         .then(function(data) {
@@ -148,7 +148,7 @@ function openPriceCategory(event, priceCategory) {
             for (let j = 0; j < 4; j++){
               while(true){
                 dataIndex++;
-                if (data[dataIndex].steamAppID == null){
+                if (data[dataIndex%60].steamAppID == null){
                   continue;
                 }
                 break;
@@ -159,15 +159,15 @@ function openPriceCategory(event, priceCategory) {
               append(row, column);
 
               var card = createNode('div');
-              card.setAttribute('class', 'card d-inline-block');
+              card.setAttribute('class', 'card d-inline-block h-100');
               append(column, card);
 
               var imgDiv = createNode('div');
               imgDiv.setAttribute('class', 'card-link-wrapper text-center');
               append(card, imgDiv);
 
-              let link = "descriptionPage.html?id=" + data[dataIndex].steamAppID;
-              let imageSrc = data[dataIndex].thumb;
+              let link = "descriptionPage.html?id=" + data[dataIndex%60].steamAppID;
+              let imageSrc = data[dataIndex%60].thumb;
 
               imgDiv.innerHTML = '<a href="'+ link +'"><img src="' + imageSrc + '"class="card-img-top w-100" alt="Game image"></a><a href="'+ link +'" class="btn card-link fw-bold d-none d-sm-block px-sm-0 pb-0 pb-md-1 pt-md-2">DETAILS <i class="fa-solid fa-chevron-right"></i></a>';
 
@@ -175,7 +175,7 @@ function openPriceCategory(event, priceCategory) {
               bodyDiv.setAttribute('class', 'card-body pt-2 pt-md-3 pb-1 px-1 px-md-3 text-start lh-1');
               append(card, bodyDiv);
 
-              bodyDiv.innerHTML = '<a href="'+ link +'" class="card-title">' + data[dataIndex].title + '</a><p class="card-text mt-1 mb-0 mb-md-1 fw-bold">'+ data[dataIndex].salePrice +'</p>';
+              bodyDiv.innerHTML = '<a href="'+ link +'" class="card-title">' + data[dataIndex%60].title + '</a><p class="card-text mt-1 mb-0 mb-md-1 fw-bold">'+ data[dataIndex%60].salePrice +'</p>';
             }
           }
 
@@ -185,7 +185,7 @@ function openPriceCategory(event, priceCategory) {
         });
   //price 4 is more than £35
 
-  url = "https://www.cheapshark.com/api/1.0/deals?pageSize=50&lowerPrice=35"
+  url = "https://www.cheapshark.com/api/1.0/deals?pageSize=60&lowerPrice=35"
   fetch(url)
         .then((resp) => resp.json())
         .then(function(data) {
@@ -212,7 +212,7 @@ function openPriceCategory(event, priceCategory) {
               append(row, column);
 
               var card = createNode('div');
-              card.setAttribute('class', 'card d-inline-block');
+              card.setAttribute('class', 'card d-inline-block h-100');
               append(column, card);
 
               var imgDiv = createNode('div');
