@@ -1,0 +1,28 @@
+.metacritics-img {
+    max-width: 40px;
+    max-height: 40px;
+}
+
+#notes {
+    max-width: 85%;
+}
+
+#reviews a, #cheapestPriceDiv a {
+    color: inherit;
+}
+
+#reviews a:hover, #cheapestPriceDiv a:hover {
+    color: #ffc107;
+}
+
+.metacritics-unrated {
+    color: #E78F8E;
+}
+
+.cheapestPrice {
+    max-width: 300px;
+}
+
+#description h2 {
+    margin-top: 25px;
+}
