@@ -61,7 +61,7 @@ function createCategoryTab(category, page){
               append(row, column);
 
               var card = createNode('div');
-              card.setAttribute('class', 'card d-inline-block');
+              card.setAttribute('class', 'card d-inline-block h-100');
               append(column, card);
 
               var imgDiv = createNode('div');
