@@ -19,7 +19,6 @@ const screenshots = document.getElementById('carousel-inner');
 const reviews = document.getElementById('reviews');
 
 let url = "https://api.codetabs.com/v1/proxy/?quest=https://store.steampowered.com/api/appdetails?appids="+id;
-console.log(url);
 
 function callFetch() {
     fetch(url)
@@ -28,11 +27,15 @@ function callFetch() {
 
             let data = eval("response['" + String(id) + "'];").data;
 
-            document.getElementById("description").innerHTML = data.detailed_description;
-        
+            document.getElementById("description").innerHTML += data.detailed_description;
+            document.title = data.name;
             title.innerHTML = data.name;
 
-            document.getElementById('requirements').innerHTML = data.pc_requirements.recommended;
+            if (data.pc_requirements.recommended!=undefined) {
+              document.getElementById('requirements').innerHTML = data.pc_requirements.recommended;
+            } else {
+              document.getElementById('requirements').innerHTML = data.pc_requirements.minimum;
+            }
 
 
             let screenshots = data.screenshots;
@@ -65,16 +68,23 @@ function callFetch() {
             }
 
             if (data.metacritic != undefined){
-              document.getElementById("reviews").innerHTML = "<a href='" + data.metacritic.url + "'><h2>Metacritic Score: " + data.metacritic.score + "</h2></a>";
+              console.log("here!");
+              document.getElementById("reviews").innerHTML += '<a class="" href=' + data.metacritic.url + '><h2 class="metacritic-score">Metacritic Score: ' + data.metacritic.score + '</h2></a>';
             }else{
-              document.getElementById("reviews").innerHTML = "<h2>Metacritic Score: unrated</h2>";
+              document.getElementById("reviews").innerHTML += '<h2>Metacritic Score: <span class="metacritics-unrated">UNRATED</span></h2>';
             }
 
             if (data.content_descriptors.notes != null){
-              document.getElementById("notes").innerHTML = "please note: " + data.content_descriptors.notes;
+              document.getElementById("notes").innerHTML = '<p><span class="text-warning">PLEASE NOTE:</span> ' + data.content_descriptors.notes+'</p>';
             }
 
             let cheapestPriceDiv = document.getElementById("cheapestPriceDiv");
+
+            if (data.is_free){
+              cheapestPriceDiv.innerHTML= "<h3>Steam</h3><a href='https://store.steampowered.com/app/" + id + "'>FREE!</a>";
+              return;
+            }
+            cheapestPriceDiv.innerHTML = "<h3>Steam</h3><a href='https://store.steampowered.com/app/" + id + "'>" + data.price_overview.final_formatted + "</a>";
 
             let url = "https://www.cheapshark.com/api/1.0/deals?steamAppID=" + id;
 
@@ -95,7 +105,7 @@ function callFetch() {
                             cheapestStoreName = store.storeName;
                         }
                     });
-                    cheapestPriceDiv.innerHTML= "<h3>" + cheapestStoreName + "</h3><a href='https://www.cheapshark.com/redirect?dealID=" + dealData[0].dealID + "'>$" + dealData[0].salePrice + "</a>";
+                    cheapestPriceDiv.innerHTML = '<h3>' + cheapestStoreName + '</h3><a class="fw-bold" href="https://www.cheapshark.com/redirect?dealID="' + dealData[0].dealID + '">$ ' + dealData[0].salePrice + '</a>';
                 
                   })
                   .catch(function(error) {
@@ -106,7 +116,6 @@ function callFetch() {
               .catch(function(error) {
                 console.log(error);
               });
-
         })
         .catch(function(error) {
           console.log(error);
