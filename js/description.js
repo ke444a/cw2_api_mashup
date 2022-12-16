@@ -105,7 +105,7 @@ function callFetch() {
                             cheapestStoreName = store.storeName;
                         }
                     });
-                    cheapestPriceDiv.innerHTML = '<h3>' + cheapestStoreName + '</h3><a class="fw-bold" href="https://www.cheapshark.com/redirect?dealID="' + dealData[0].dealID + '">$ ' + dealData[0].salePrice + '</a>';
+                    cheapestPriceDiv.innerHTML = '<h3>' + cheapestStoreName + '</h3><a class="fw-bold" href="https://www.cheapshark.com/redirect?dealID=' + dealData[0].dealID + '">$ ' + dealData[0].salePrice + '</a>';
                 
                   })
                   .catch(function(error) {
