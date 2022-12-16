@@ -70,7 +70,7 @@ function openPriceCategory(event, priceCategory) {
               bodyDiv.setAttribute('class', 'card-body pt-2 pt-md-3 pb-1 px-1 px-md-3 text-start lh-1');
               append(card, bodyDiv);
 
-              bodyDiv.innerHTML = '<a href="'+ link +'" class="card-title">' + data[dataIndex].title + '</a><p class="card-text mt-1 mb-0 mb-md-1 fw-bold">'+ data[dataIndex].salePrice +'</p>';
+              bodyDiv.innerHTML = '<a href="'+ link +'" class="card-title">' + data[dataIndex].title + '</a><p class="card-text mt-1 mb-0 mb-md-1 fw-bold">£ '+ data[dataIndex].salePrice +'</p>';
             }
           }
 
@@ -123,7 +123,7 @@ function openPriceCategory(event, priceCategory) {
               bodyDiv.setAttribute('class', 'card-body pt-2 pt-md-3 pb-1 px-1 px-md-3 text-start lh-1');
               append(card, bodyDiv);
 
-              bodyDiv.innerHTML = '<a href="'+ link +'" class="card-title">' + data[dataIndex%60].title + '</a><p class="card-text mt-1 mb-0 mb-md-1 fw-bold">'+ data[dataIndex%60].salePrice +'</p>';
+              bodyDiv.innerHTML = '<a href="'+ link +'" class="card-title">' + data[dataIndex%60].title + '</a><p class="card-text mt-1 mb-0 mb-md-1 fw-bold">£ '+ data[dataIndex%60].salePrice +'</p>';
             }
           }
 
@@ -175,7 +175,7 @@ function openPriceCategory(event, priceCategory) {
               bodyDiv.setAttribute('class', 'card-body pt-2 pt-md-3 pb-1 px-1 px-md-3 text-start lh-1');
               append(card, bodyDiv);
 
-              bodyDiv.innerHTML = '<a href="'+ link +'" class="card-title">' + data[dataIndex%60].title + '</a><p class="card-text mt-1 mb-0 mb-md-1 fw-bold">'+ data[dataIndex%60].salePrice +'</p>';
+              bodyDiv.innerHTML = '<a href="'+ link +'" class="card-title">' + data[dataIndex%60].title + '</a><p class="card-text mt-1 mb-0 mb-md-1 fw-bold">£ '+ data[dataIndex%60].salePrice +'</p>';
             }
           }
 
@@ -228,7 +228,7 @@ function openPriceCategory(event, priceCategory) {
               bodyDiv.setAttribute('class', 'card-body pt-2 pt-md-3 pb-1 px-1 px-md-3 text-start lh-1');
               append(card, bodyDiv);
 
-              bodyDiv.innerHTML = '<a href="'+ link +'" class="card-title">' + data[dataIndex].title + '</a><p class="card-text mt-1 mb-0 mb-md-1 fw-bold">'+ data[dataIndex].salePrice +'</p>';
+              bodyDiv.innerHTML = '<a href="'+ link +'" class="card-title">' + data[dataIndex].title + '</a><p class="card-text mt-1 mb-0 mb-md-1 fw-bold">£ '+ data[dataIndex].salePrice +'</p>';
             }
           }
 
