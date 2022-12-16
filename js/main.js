@@ -73,7 +73,7 @@ fetch(url)
 
       var slider = document.getElementsByClassName("deals-slider")[0];
 
-      for(var i = 0; i < topDealItemCount; i++){
+      for(var i = 0; i < 50; i++){
 
         if(data[i].steamAppID == null){
           continue;
@@ -114,6 +114,7 @@ fetch(url)
       })
     })
     .catch(function(error) {
+      console.log(error);
     });
 
 
